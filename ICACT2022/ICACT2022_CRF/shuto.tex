@@ -10,6 +10,7 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -46,9 +47,6 @@ Division of Science and Technology,} \\
 }
 
 
-
-
-
 \maketitle
 
 \begin{abstract}
@@ -67,8 +65,6 @@ VANET, Routing Protocols, Opportunistic Routing Protocols, Shadowing
 \end{IEEEkeywords}
 
 \section{Introduction}
-Intelligent transportation systems (ITS) \cite{1} have been actively pursued to improve the safety and convenience of driving and  reduce the environmental impact. 
-Vehicle ad-hoc networks (VANETs), made possible by inter-vehicle communication, are essential for various applications in ITS.
 In VANETs,  ad-hoc communication is achieved between vehicles equipped with wireless communication devices, enabling the construction of flexible networks. 
 When VANETs are deployed in  urban environments, fast node mobility, heterogeneity, and the presence of buildings must be considered in the performance evaluation. A wide variety of routing protocols have been proposed to meet various requirements \cite{2}.
 The existing routing protocols in VANETs can be classified into two categories: topology-based routing protocols and geographic routing protocols. Topology-based routing protocols \cite{3,4,5} use network link information to forward packets. 
@@ -84,16 +80,15 @@ This can increase the chance of receiving packets and, consequently, achieve bet
 However, most of the existing originally opportunistic routing protocols  are not designed for urban environments; therefore, their performance evaluation does not take into account the effect of \textit{shadowing fading} caused by buildings, which may result in an overestimation of the communication performance. 
 In fact, it has been demonstrated that buildings attenuate the radio wave of 802.11p channels, and that data transmission is limited along the road\cite{17}. 
 
-In this study, we evaluate the link state aware geographic opportunistic (LSGO)
-routing protocol for VANETs \cite{18}, using an obstacle shadowing model \cite{20}. 
-Our evaluations tested the LSGO under the obstacle shadowing model \cite{20} using the ns-3 network simulator \cite{19}. 
-We also tested the protocol performance when shadowing is not considered.
-Additionally, we proposed a new routing protocol called the shadowing-fading-based intersection geographic opportunistic (SIGO) routing protocol to improve the communication performance in shadowing environments.
-In the SIGO protocol, we consider the distance to the destination node and the expected transmission probability. Furthermore, SIGO considers whether a node is close to a street intersection node  when selecting the relay nodes.
-Our evaluations demonstrated the effectiveness of the proposed method in a simulation environment. 
-The rest of this paper is organized as follows:
-% Section \ref{relatedSection} describes the existing opportunistic routing protocols and shadowing. 
-% Section \ref{LSGO} describes LSGO. 
+% In this study, we evaluate the link state aware geographic opportunistic (LSGO)
+% routing protocol for VANETs \cite{18}, using an obstacle shadowing model \cite{20}. 
+% Our evaluations tested the LSGO under the obstacle shadowing model \cite{20} using the ns-3 network simulator \cite{19}. 
+% We also tested the protocol performance when shadowing is not considered.
+% Additionally, we proposed a new routing protocol called the shadowing-fading-based intersection geographic opportunistic (SIGO) routing protocol to improve the communication performance in shadowing environments.
+% In the SIGO protocol, we consider the distance to the destination node and the expected transmission probability. Furthermore, SIGO considers whether a node is close to a street intersection node  when selecting the relay nodes.
+% Our evaluations demonstrated the effectiveness of the proposed method in a simulation environment. 
+% The rest of this paper is organized as follows:
+To solve these problems, in this study, we proposed a new routing protocol called the shadowing-fading-based intersection geographic opportunistic (SIGO) routing protocol to improve the communication performance in shadowing environments. In the SIGO protocol, we consider the distance to the destination node and the expected transmission probability. Furthermore, SIGO considers whether a node is close to a street intersection node when selecting the relay nodes.  The rest of this paper is organized as follows:
 Section \ref{relatedSection} describes the existing opportunistic routing protocols.
 Section \ref{SIGO} describes the proposed method (SIGO), and Section \ref{evaluation} presents the performance evaluation and effectiveness of the proposed method. Finally, Section \ref{conclusion} summarizes our conclusions and discusses future work.
 
@@ -104,7 +99,7 @@ Section \ref{SIGO} describes the proposed method (SIGO), and Section \ref{evalua
 \section{RELATED WORK} %----------------------
 \label{relatedSection}
 
-% \subsection{Opportunistic Routing Protocols Background}
+\subsection{Opportunistic Routing Protocols Background}
 
 Compared with conventional geographic routing protocols \cite{6}, opportunistic routing protocols improve communication performance by increasing the number of opportunities for relay nodes to receive packets. Figure \ref{fig:Basic} shows the basic model of the opportunistic routing protocols.
 
@@ -130,16 +125,37 @@ Opportunistic multi-hop routing for wireless
 networks (ExOR) \cite{16} have been proposed as typical opportunistic routing protocols. It determines the priority of relay nodes by using the original expected transmission cost (ETX) \cite{21}. However, this newly devised method for calculating the ETX value has a problem in that it does not take into account the random and fast mobility nature of nodes, which is a characteristic of VANET nodes.\par
 
 
-Therefore, LSGO devised a new ETX value suitable for VANETs. In LSGO, the ETX value is used as a metric to determine the priority, which improves the packet delivery ratio (PDR) and reduces the end-to-end delay.
+Therefore, the link state aware geographic opportunistic (LSGO) routing protocol \cite{18} devised a new ETX value suitable for VANETs. In LSGO, the ETX value is used as a metric to determine the priority, which improves the packet delivery ratio (PDR) and reduces the end-to-end delay.
 In the collision-aware opportunistic routing protocol (SCAOR) \cite{22}, node density is added as a metric in the priority determination to prevent packet collisions that degrade network performance. 
 As a result, the performance is improved compared with LSGO and EXOR in a highway deployment environment. 
 In the hybrid opportunistic and position-based routing protocol (OPBR) for VANETs
 \cite{23}, to solve the problem of delay increase when the packet does not reach the relay node, OPBR infers the link breakage of the neighboring node from the location information gathered from the neighboring nodes.
 
-
 However, a  common issue in all of these protocols is that they do not consider shadowing.
 This problem causes these protocols to overestimate communication performance. 
-% In Section \ref{LSGO}, we examine the impact of shadowing on the communication performance of LSGO using simulations. 
+
+\subsection{Problems with LSGO}
+
+In this section, we discuss the problems of the LSGO relay strategy.  
+In the forwarding strategy of LSGO, a node that is closer to the destination node and has better link quality is more likely to be selected as a forwarding node. 
+An example of this simulation is shown in Figure \ref{fig:LSGO-route} (a). 
+Consider the situation where node B is selected as the forwarding node, as shown in this Figure. 
+In this case, the following relay nodes after node B (selected from nodes closer to the destination node than node B) are only nodes C and D with poor link quality due to shadowing.  
+We call this problem the $local$ $shadowing$ $problem$. 
+Occasionally, it is possible  that the links with nodes C and D do not exist entirely  because of  shadowing. 
+In these cases, the problem is that there is no longer a node close to the destination other than  node B. 
+This has long been a problem in  location-based routing protocols and is called the local optimum problem. 
+From the above, we can see that the LSGO forwarding strategy is likely to fall into the local optimum problem and the local shadowing problem. This problem may be solved by selecting a street intersection node, such as node A, as a relay node, as shown in \mbox{Figure \ref{fig:LSGO-route} (b)}. 
+
+
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=80mm]{figures/efficient_route.eps}
+\caption{Forwarding node selection problem}
+\label{fig:LSGO-route}
+\end{figure}
 
 
 % \subsection{Shadowing fading}
@@ -362,38 +378,29 @@ periodically receives hello packets from its neighbor nodes.
 
 
 \subsection{SIGO hello and data packet format}
-In SIGO, each node periodically broadcasts a hello packet to keep track of its neighbors' link quality and location. The hello packet contains the following information. 
+In SIGO, each node periodically broadcasts a hello packet to keep track of its neighbors' link quality and location. 
+The hello packet contains the $ID$ and location information of the generating node.
+% The hello packet contains the following information. 
 
-\begin{itemize}
-\item $ID$: The identifier of the node that generates the hello packet.
-\item $X$: The $x$-coordinate value.
-\item $Y$: The $y$-coordinate value.
-% \item $v$: The speed.
-% \item $a$: The acceleration.
-% \item $\theta$: The direction.
-\end{itemize}
-% The information of  $v$, $a$, and $\theta$ is used in the \textit{neighbor status prediction} algorithm described in subsection \ref{neighbor_status}.
+% \begin{itemize}
+% \item $ID$: The identifier of the node that generates the hello packet.
+% \item $X$: The $x$-coordinate value.
+% \item $Y$: The $y$-coordinate value.
+% \end{itemize}
 
-% \begin{figure}[!ht]
-% \centering
-% \includegraphics[width=70mm]{figures/Hellopacket_format.eps}
-% \caption{The format of hello packet}
-% \label{fig:hellopacket}
-% \end{figure}
-
-% The structure of the data packet is shown in Figure \ref{fig:datapacket}.
 The structure of the data packet is shown below. 
 It is assumed that some location information service is used to obtain the location information of the destination node, which is beyond the scope of this study. 
 Because SIGO does not use control packets, the priority information assigned to each relay candidate node is included in the data packet.
+The data packet contains source node id, destination node id, destination location information, the relay candidate node $ID$ with priority $i$ ($ i$ = 1,2, 3, ... highest to lowest priority), and data payload. Because SIGO does not use control packets, the priority information assigned to each relay candidate node is included in the data packet.
 
-\begin{itemize}
-\item $SourceId$: The source node ID.
-\item $DstId$: The destination node ID.
-\item $Dst_x Pos$: The $x$-coordinates of the destination node.
-\item $Dst_y Pos$: The $y$-coordinates of the destination node.
-\item $Id_i$: The relay candidate node ID with priority $i$. $i$ = 1, 2, 3, ...(highest to lowest priority) 
-\item $Data$: The data payload.
-\end{itemize}
+% \begin{itemize}
+% \item $SourceId$: The source node ID.
+% \item $DstId$: The destination node ID.
+% \item $Dst_x Pos$: The $x$-coordinates of the destination node.
+% \item $Dst_y Pos$: The $y$-coordinates of the destination node.
+% \item $Id_i$: The relay candidate node ID with priority $i$. $i$ = 1, 2, 3, ...(highest to lowest priority) 
+% \item $Data$: The data payload.
+% \end{itemize}
 
 % \begin{figure}[!ht]
 % \centering
@@ -404,7 +411,7 @@ Because SIGO does not use control packets, the priority information assigned to 
 
 \subsection{Link quality estimation}
 
-  In SIGO, each node broadcasts a hello packet periodically, and hello packets are used to measure the expected transmission probability of neighboring nodes. The transmitted hello packets consist of the node ID and node position coordinates (X,Y). To calculate the ETX of a link, each node should record $t_{0}$, which is the time when the first hello packet is received and the number of packets it receives from the neighbor during the last $w$ seconds. Then, according to the interval between $t_{0}$ and the current time $t$ and window $w$, the expected probability of successful transmission $r(t)$ is calculated by Equation (\ref{trans-prediction})
+  In SIGO, each node broadcasts a hello packet periodically, and hello packets are used to measure the expected transmission probability of neighboring nodes. To calculate the ETX of a link, each node should record $t_{0}$, which is the time when the first hello packet is received and the number of packets it receives from the neighbor during the last $w$ seconds. Then, according to the interval between $t_{0}$ and the current time $t$ and window $w$, the expected probability of successful transmission $r(t)$ is calculated by Equation (\ref{trans-prediction})
 
 \begin{equation}
 \label{trans-prediction}
@@ -416,7 +423,7 @@ r(t) =\begin{cases}count(t, t_{0}), & 0 < t - t_{0} < 1,  \\ \frac{count(t,t_{0}
 The denominator is the number of hello packets that should have been received during the window, and $\tau$ represents the broadcast interval of the hello packets. $count(t,t_{0})$ is the number of hello packets received during $t$-$t_{0}$.  
 As can be seen from the equation, there are three situations in terms of the difference between $t$-$t_{0}$ and window time $w$. (1) 0 < $t$-$t_{0}$ < 1, where the packet delivery ratio is the number of hello packets received from $t_{0}$ to $t$. (2) 1 $\leq$ $t$-$t_{0}$ < $w$, where the packet delivery ratio is the number of hello packets received from $t_{0}$ to $t$ divided by the length of this period. (3) $t$ - $t_{0}$ $\geq$ $w$, which is the same as the calculation in the ETX metric.
 
-In LSGO, the asymmetry of the link is not considered, and only the expected probability of one-way transmission is used to calculate the link ETX. 
+In SIGO, the asymmetry of the link is not considered, and only the expected probability of one-way transmission is used to calculate the link ETX. 
 Assuming that the expected probability of a one-way transmission is $r(t)$, then the link ETX is calculated using Equation (\ref{equ-intersection}).
  
  \begin{equation}
@@ -473,10 +480,10 @@ IRI_i = \alpha\frac{90\left(\frac{\theta_I}{90}\right)^\frac{1}{{\gamma}}}{R_p}
 \end{equation}
 where $\theta_i$ is the angle between the lines connecting the transmitting node to the destination node and  connecting the transmitting node and the intersection node $i$ , as shown in Figure \ref{fig:intersection_angle}.
 The higher $\theta_i$  and the lower  $R_p$, the higher the $IRI_i$.
-$\alpha$ ($\alpha$ > 0) is a weighting factor of $IRI_i$.
+$\alpha$ ($\alpha$ \verb|>| 0) is a weighting factor of $IRI_i$.
 As $IRI_i$ increases, the transmitting node selects the intersection node as a relay node with a higher probability. 
 The proposed scheme prioritizes the intersection node as the relay node when $R_p$ is small. 
-If $\theta_i$ (|$\theta_i$| <= 90) is large, the communication between the sending node and the candidate relay node that is not an intersection node is more likely to be adversely affected by the shadowing of the building. In other words, when $\theta_i$ is large, an intersection node should be selected as a relay node. Therefore, $IRI_i$ is used for priority calculation in the proposed scheme only when the angle $\theta_i$ is greater than 45 degrees.
+If $\theta_i$ ($\theta_i$ \verb|<=| 90 ) is large, the communication between the sending node and the candidate relay node that is not an intersection node is more likely to be adversely affected by the shadowing of the building. In other words, when $\theta_i$ is large, an intersection node should be selected as a relay node. Therefore, $IRI_i$ is used for priority calculation in the proposed scheme only when the angle $\theta_i$ is greater than 45 degrees.
 % where $\theta_I$ is the angle between the lines connecting the transmitting node to the destination node and  connecting the transmitting node and the intersection node $i$ (Figure \ref{fig:intersection_angle}).
 % The higher $\theta_I$  and the lower  $R_p$, the higher the $IRI_i$.
 % As $IRI_i$ increases, the transmitting node selects the intersection node as a relay node with a higher probability. 
@@ -488,7 +495,7 @@ If $\theta_i$ (|$\theta_i$| <= 90) is large, the communication between the sendi
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=90mm]{figures/Intersection_angle.eps}
+\includegraphics[width=80mm]{figures/Intersection_angle.eps}
 \caption{The Intersection node angle}
 \label{fig:intersection_angle}
 \end{figure}
@@ -576,7 +583,7 @@ L_{s,o} = \alpha n  + \beta d_0
 
 where $\alpha$ is the attenuation per wall (dB), and $n$ is the number of walls penetrated. 
 $\beta$ is the attenuation per meter (dB), and $d_0$ is the distance traveled through obstacles (m). 
-In this simulation experiment, We evaluated the performance by varying the number of nodes and the shadowing parameter $\alpha$ in Equation (\ref{shadowing}). $\beta$ was fixed to 0.4db.  
+In this simulation experiment, We evaluated the performance by varying the number of nodes and the shadowing parameter $\alpha$ in Equation (\ref{shadowing}).
 An optimized algorithm to select the number of relay candidate nodes was proposed in LSGO. However, the performance of this algorithm is poor in the situations where shadowing occurs. For this reason, this evaluation fixed the maximum number of relay candidate nodes for both SIGO and LSGO.
 
 
@@ -636,19 +643,19 @@ We have the following three reasons for this:
 (1) Because the road structure used in our simulation is a grid, the distance between the source node and the destination node does not change regardless of which road the packet is relayed on.
 (2) In this experiment, we did not implement recovery routing such as the GPSR recovery scheme to deal with the local optimum problem. (3) Retransmission control was not used in the experiment.
 
-
-
-
-
-
-
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=80mm]{figures/delay.eps}
-\caption{End-to-end delays vs. number of nodes and shadowing intensity }
+% \begin{figure}[!ht]
+% \centering
+% \includegraphics[width=80mm]{figures/delay.eps}
+% \caption{End-to-end delays vs. number of nodes and shadowing intensity }
+% \label{fig:delay}
+% \end{figure}
+\begin{figure}[htbp]
+\centering\includegraphics[width=80mm]{figures/delay.eps}
+\caption{End-to-end delays vs. number of nodes and shadowing intensity}
 \label{fig:delay}
 \end{figure}
 
+% \vspace{-10zh}
 
 
 Figure \ref{fig:overhead} shows the overhead of SIGO and LSGO when the number of nodes and the shadowing parameter are varied. Figure 15 tells us: (1) The overhead of both LSGO and SIGO decreases with an increase in the number of nodes; (2) the overhead improvement of SIGO over LSGO increases with an increase in the shadowing parameter; (3) the difference in overhead between SIGO and LSGO becomes smaller with an increase in the number of nodes. The reason for (1) is that the total number of data packets successfully received by the destination node increases for both LSGO and SIGO, increasing the number of nodes. The reason for (2) is that the total number of data packets successfully received by the destination node increases in SIGO than in LSGO, increasing the shadowing parameter. In addition, this means that even though the total number of data packets successfully received by destination nodes increases in SIGO, the total number of data packets transmitted by all nodes does not increase signiﬁcantly compared to LSGO. The reason for (3) is that when the number of nodes is large, rebroadcasting by the intersection node does not always result in efficient communication. Suppose there is a building in the direction of the destination node and a street intersection node rebroadcasts the packet in SIGO. In that case, nodes on two different roads forming the intersection are likely to be selected as relay candidate nodes when the number of nodes large. In this situation, the possibility that a low priority candidate node cannot receive packets from a high-priority relay candidate node due to the shadowing effect of a building increases. As a result, redundant rebroadcasting increases because the rebroadcasting by a low-priority relay candidate node is not canceled. Figure \ref{fig:overhead_reason} shows an example of this situation. The packets rebroadcasted by the street intersection node are received by nodes 1-4. Nodes 1, 2, 3, and 4 have a higher priority in that order. Ideally, only node 1 should rebroadcast the data packet. However, even if node 1 rebroadcasts the packet, nodes 3 and 4 cannot receive it due to the shadowing effect and rebroadcast.
