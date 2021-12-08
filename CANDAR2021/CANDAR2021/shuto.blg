@@ -1,0 +1,73 @@
+This is BibTeX, Version 0.99d (TeX Live 2021/W32TeX)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: shuto.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: shuto.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in 5
+Warning--empty journal in 26
+Name 1 in "Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann, Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel, Peter Wagner, and Evamarie Wießner" has a comma at the end for entry 27
+while executing---line 2403 of file IEEEtran.bst
+Too many commas in name 1 of "Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann, Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel, Peter Wagner, and Evamarie Wießner" for entry 27
+while executing---line 2403 of file IEEEtran.bst
+Too many commas in name 1 of "Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann, Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel, Peter Wagner, and Evamarie Wießner" for entry 27
+while executing---line 2403 of file IEEEtran.bst
+Too many commas in name 1 of "Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann, Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel, Peter Wagner, and Evamarie Wießner" for entry 27
+while executing---line 2403 of file IEEEtran.bst
+Too many commas in name 1 of "Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann, Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel, Peter Wagner, and Evamarie Wießner" for entry 27
+while executing---line 2403 of file IEEEtran.bst
+Too many commas in name 1 of "Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann, Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel, Peter Wagner, and Evamarie Wießner" for entry 27
+while executing---line 2403 of file IEEEtran.bst
+Too many commas in name 1 of "Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann, Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel, Peter Wagner, and Evamarie Wießner" for entry 27
+while executing---line 2403 of file IEEEtran.bst
+
+Done.
+You've used 27 entries,
+            4087 wiz_defined-function locations,
+            965 strings with 12503 characters,
+and the built_in function-call counts, 22317 in all, are:
+= -- 1873
+> -- 535
+< -- 226
++ -- 298
+- -- 84
+* -- 1067
+:= -- 3300
+add.period$ -- 54
+call.type$ -- 27
+change.case$ -- 28
+chr.to.int$ -- 525
+cite$ -- 29
+duplicate$ -- 1561
+empty$ -- 1601
+format.name$ -- 109
+if$ -- 5190
+int.to.chr$ -- 0
+int.to.str$ -- 27
+missing$ -- 248
+newline$ -- 104
+num.names$ -- 27
+pop$ -- 541
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1720
+stack$ -- 0
+substring$ -- 1262
+swap$ -- 1357
+text.length$ -- 51
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 27
+warning$ -- 2
+while$ -- 121
+width$ -- 29
+write$ -- 286
+(There were 7 error messages)

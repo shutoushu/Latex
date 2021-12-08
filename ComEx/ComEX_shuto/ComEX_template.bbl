@@ -1,0 +1,27 @@
+\begin{thebibliography}{1} \providecommand{\urlstyle}[1]{} \urlstyle{rm}
+
+\bibitem{opportunistic}
+P.~Jadhav and R.~Satao, ``A survey on opportunistic routing protocols for
+  wireless sensor networks,'' {\em Elsevier}, vol.~79, pp.~603--609, 2016.
+
+\bibitem{LSGO}
+X.~Cai, Y.~He, C.~Zhao, L.~Zhu, and C.~Li, ``Lsgo: link state aware geographic
+  opportunistic routing protocol for vanets,'' {\em EURASIP Journal on wireless
+  communications and networking}, vol.~2014, no.~1, pp.~1--10, 2014.
+
+\bibitem{geographic}
+S.~Boussoufa-Lahlah, F.~Semchedine, and L.~Bouallouche-Medjkoune, ``Geographic
+  routing protocols for vehicular ad hoc networks (vanets): A survey,'' {\em
+  Vehicular Communications}, vol.~11, pp.~20--31, 2018.
+
+\bibitem{JBR}
+S.~Tsiachris, G.~Koltsidas, and F.-N. Pavlidou, ``Junction-based geographic
+  routing algorithm for vehicular ad hoc networks,'' {\em Wireless personal
+  communications}, vol.~71, no.~2, pp.~955--973, 2013.
+
+\bibitem{obstacle}
+S.~E. Carpenter and M.~L. Sichitiu, ``An obstacle model implementation for
+  evaluating radio shadowing with ns-3,'' {\em Proceedings of the 2015 Workshop
+  on Ns-3}, pp.~17--24, 2015.
+
+\end{thebibliography}\urlstyle{tt}

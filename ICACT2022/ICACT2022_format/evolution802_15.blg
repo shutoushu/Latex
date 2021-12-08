@@ -1,0 +1,78 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: evolution802_15.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: evolution802_15.bib
+Warning--I didn't find a database entry for "train"
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty author in std2003
+Warning--empty author in std2006
+Warning--empty author in std2007
+Warning--empty author in std2009c
+Warning--empty author in std2009d
+Warning--empty author in std2011
+Warning--empty author in std2012e
+Warning--missing institution in isostd
+Warning--empty author in std2012f
+Warning--empty author in std2012g
+Warning--empty author in std2013j
+Warning--empty author in std2013k
+Warning--empty author in std2014p
+Warning--empty author in std2015
+Warning--empty author in std2016n
+Warning--empty author in std2016q
+Warning--empty author in std2016u
+Warning--empty author in std2017t
+Warning--empty author in std2017v
+Warning--empty author in std2018s
+
+Done.
+You've used 30 entries,
+            4087 wiz_defined-function locations,
+            970 strings with 14943 characters,
+and the built_in function-call counts, 17598 in all, are:
+= -- 1366
+> -- 249
+< -- 159
++ -- 171
+- -- 26
+* -- 835
+:= -- 2644
+add.period$ -- 58
+call.type$ -- 30
+change.case$ -- 28
+chr.to.int$ -- 390
+cite$ -- 50
+duplicate$ -- 1371
+empty$ -- 1525
+format.name$ -- 29
+if$ -- 4132
+int.to.chr$ -- 0
+int.to.str$ -- 30
+missing$ -- 188
+newline$ -- 113
+num.names$ -- 9
+pop$ -- 455
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1337
+stack$ -- 0
+substring$ -- 884
+swap$ -- 1047
+text.length$ -- 29
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 30
+warning$ -- 20
+while$ -- 85
+width$ -- 32
+write$ -- 268
+(There were 21 warnings)
