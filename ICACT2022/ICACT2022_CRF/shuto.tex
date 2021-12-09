@@ -28,10 +28,10 @@
 \\
 \IEEEauthorblockA{
 \textit{ *Graduate School of Information Science and Enginieering, Ritsumeikan University, } Shiga, Japan \\
-\textit{**Department of Computer Sciences,
-Division of Science and Technology,} \\
-\textit{Graduate School of Technology, Industrial and Social Sciences}
-\textit{Tokushima University,} Tokushima, Japan \\
+\textit{**Graduate School of Technology, Industrial and Social Sciences, Tokushima University, } Tokushima, Japan \\
+% Division of Science and Technology,} \\
+% \textit{Graduate School of Technology, Industrial and Social Sciences}
+% \textit{Tokushima University,} Tokushima, Japan \\
 \textit{***College of Information Science and Engineering, Ritsumeikan University,} Shiga, Japan \\
 }
 
@@ -67,8 +67,8 @@ VANET, Routing Protocols, Opportunistic Routing Protocols, Shadowing
 \section{Introduction}
 In VANETs,  ad-hoc communication is achieved between vehicles equipped with wireless communication devices, enabling the construction of flexible networks. 
 When VANETs are deployed in  urban environments, fast node mobility, heterogeneity, and the presence of buildings must be considered in the performance evaluation. A wide variety of routing protocols have been proposed to meet various requirements \cite{2}.
-The existing routing protocols in VANETs can be classified into two categories: topology-based routing protocols and geographic routing protocols. Topology-based routing protocols \cite{3,4,5} use network link information to forward packets. 
-Additionally, these routing protocols are not suitable for VANETs because they cannot support fast node movements. In contrast, geographic routing protocols \cite{6, 7, 8 ,9} can forward packets based on the location information of neighboring nodes and destination node location. 
+The existing routing protocols in VANETs can be classified into two categories: topology-based routing protocols and geographic routing protocols. Topology-based routing protocols \cite{3,4} use network link information to forward packets. 
+Additionally, these routing protocols are not suitable for VANETs because they cannot support fast node movements. In contrast, geographic routing protocols \cite{6, 7,9} can forward packets based on the location information of neighboring nodes and destination node location. 
 In this type of routing protocol, nodes do not need to maintain established routes, as in conventional mobile ad-hoc network routing protocols. 
 Therefore, the geographic routing protocol can cope with topology changes with a small number of packets.
 Greedy forwarding is one of the most widely used packet forwarding methods for geographic routing protocols.
@@ -120,7 +120,7 @@ Opportunistic multi-hop routing for wireless networks (ExOR) \cite{16} have been
 
 Therefore, the link state aware geographic opportunistic (LSGO) routing protocol \cite{18} devised a new ETX value suitable for VANETs. In LSGO, the ETX value is used as a metric to determine the priority, which improves the packet delivery ratio (PDR) and reduces the end-to-end delay.
 In the collision-aware opportunistic routing protocol (SCAOR) \cite{22}, node density is added as a metric in the priority determination to prevent packet collisions that degrade network performance. 
-As a result, the performance is improved compared with LSGO and EXOR in a highway deployment environment. 
+% As a result, the performance is improved compared with LSGO and EXOR in a highway deployment environment. 
 % In the hybrid opportunistic and position-based routing protocol (OPBR) for VANETs
 % \cite{23}, to solve the problem of delay increase when the packet does not reach the relay node, OPBR infers the link breakage of the neighboring node from the location information gathered from the neighboring nodes.
 
@@ -582,13 +582,13 @@ An optimized algorithm to select the number of relay candidate nodes was propose
 Simulator    & NS-3 (v3.30) &  &  &  \\ \cline{1-2}
 Simulation area    & 1000m × 1000m   &  &  &  \\ \cline{1-2}
 Transmission range & 250m            &  &  &  \\ \cline{1-2}
-Number of vehicles & 200, 300, 400      &  &  &  \\ \cline{1-2}
+Number of nodes & 200, 300, 400      &  &  &  \\ \cline{1-2}
 Radio propagation model    & obstacle shadowing model\cite{20}&  &  &  \\ \cline{1-2}
 MAC Layer     & 802.11p &  &  &  \\ \cline{1-2}
 Packet Size & 512 byte       &  &  &  \\ \cline{1-2}
 Simulation Time & 30 s      &  &  &  \\ \cline{1-2}
-hello interval & 1 s      &  &  &  \\ \cline{1-2}
-Window size w  & 10 s      &  &  &  \\ \cline{1-2}
+% hello interval & 1 s      &  &  &  \\ \cline{1-2}
+% Window size w  & 10 s      &  &  &  \\ \cline{1-2}
 Number of relay candidate nodes  & 5       &  &  \\ \cline{1-2}
 shadowing parameter $\alpha$  & 10db, 20db, 30db       &  &  &  \\ \cline{1-2}
 shadowing parameter $\beta$    & 0.4db &  &  \\ \cline{1-2}
@@ -600,21 +600,28 @@ shadowing parameter $\beta$    & 0.4db &  &  \\ \cline{1-2}
 
 
 Figure \ref{fig:PDR} shows the PDR of SIGO and LSGO when the number of nodes and the shadowing parameter is varied. 
-In this figure, the number in round brackets after the protocol name indicates the value of the shadowing parameter $\alpha$. SIGO (10) shows the PDR of the proposed protocol when $\alpha$ is 10.
-As shown in figure \ref{fig:PDR}, SIGO achieves a higher PDR than LSGO for all cases. 
-As the number of nodes increased and the value of the shadowing parameter decreased, the PDR increased. This is because the possibility of forming an unreachable route (as shown in figure \ref{fig:LSGO-route}) increases in LSGO with an increase in $\alpha$. The possibility of forming a reachable route increases by prioritizing street intersection nodes in the SIGO.
-We can also observe that the PDR of SIGO increases as the number of nodes increases compared to that of LSGO. It is assumed that this is due to an increase in the probability of the existence of nodes in the intersection. 
-This  is because the probability of intersection nodes increases according to the number of nodes.
-
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=80mm]{figures/PDR.eps}
 \caption{Packet delivery ratio vs. number of nodes and shadowing intensity}
 \label{fig:PDR}
 \end{figure}
+The packet delivery ratio is the ratio of the total number of packets received by the destination node to the total number of packets sent by the source node.
+In this figure, the number in round brackets after the protocol name indicates the value of the shadowing parameter $\alpha$. SIGO (10) shows the PDR of the proposed protocol when $\alpha$ is 10.
+As shown in figure \ref{fig:PDR}, SIGO achieves a higher PDR than LSGO for all cases. 
+As the number of nodes increased and the value of the shadowing parameter decreased, the PDR increased. This is because the possibility of forming an unreachable route (as shown in figure \ref{fig:LSGO-route}) increases in LSGO with an increase in $\alpha$. The possibility of forming a reachable route increases by prioritizing street intersection nodes in the SIGO.
+We can also observe that the PDR of SIGO increases as the number of nodes increases compared to that of LSGO. It is assumed that this is due to an increase in the probability of the existence of nodes in the intersection. 
+
+
 
 
 Figure \ref{fig:delay} shows the end-to-end delay of SIGO and LSGO when the number of nodes and the shadowing parameter are varied. 
+\begin{figure}[htbp]
+\centering\includegraphics[width=80mm]{figures/delay.eps}
+\caption{End-to-end delays vs. number of nodes and shadowing intensity}
+\label{fig:delay}
+\end{figure}
+The end-to-end delay is defined as the average time between the transmission of a packet by the source node and its successful reception by the destination node.
 As shown in figure \ref{fig:delay}, the delay of both SIGO and LSGO increases with an increase in the number of nodes. In the simulation scenario and setting of this study, the effect of the proposed protocol on the delay was very small. 
 We have the following three reasons for this: 
 (1) Because the road structure used in our simulation is a grid, the distance between the source node and the destination node does not change regardless of which road the packet is relayed on.
@@ -626,28 +633,24 @@ We have the following three reasons for this:
 % \caption{End-to-end delays vs. number of nodes and shadowing intensity }
 % \label{fig:delay}
 % \end{figure}
-\begin{figure}[htbp]
-\centering\includegraphics[width=80mm]{figures/delay.eps}
-\caption{End-to-end delays vs. number of nodes and shadowing intensity}
-\label{fig:delay}
-\end{figure}
+
 
 % \vspace{-10zh}
 
 
-Figure \ref{fig:overhead} shows the overhead of SIGO and LSGO when the number of nodes and the shadowing parameter are varied. Figure 15 tells us: (1) The overhead of both LSGO and SIGO decreases with an increase in the number of nodes; (2) the overhead improvement of SIGO over LSGO increases with an increase in the shadowing parameter; (3) the difference in overhead between SIGO and LSGO becomes smaller with an increase in the number of nodes. The reason for (1) is that the total number of data packets successfully received by the destination node increases for both LSGO and SIGO, increasing the number of nodes. The reason for (2) is that the total number of data packets successfully received by the destination node increases in SIGO than in LSGO, increasing the shadowing parameter. In addition, this means that even though the total number of data packets successfully received by destination nodes increases in SIGO, the total number of data packets transmitted by all nodes does not increase signiﬁcantly compared to LSGO. The reason for (3) is that when the number of nodes is large, rebroadcasting by the intersection node does not always result in efficient communication. Suppose there is a building in the direction of the destination node and a street intersection node rebroadcasts the packet in SIGO. In that case, nodes on two different roads forming the intersection are likely to be selected as relay candidate nodes when the number of nodes large. In this situation, the possibility that a low priority candidate node cannot receive packets from a high-priority relay candidate node due to the shadowing effect of a building increases. As a result, redundant rebroadcasting increases because the rebroadcasting by a low-priority relay candidate node is not canceled. Figure \ref{fig:overhead_reason} shows an example of this situation. The packets rebroadcasted by the street intersection node are received by nodes 1-4. Nodes 1, 2, 3, and 4 have a higher priority in that order. Ideally, only node 1 should rebroadcast the data packet. However, even if node 1 rebroadcasts the packet, nodes 3 and 4 cannot receive it due to the shadowing effect and rebroadcast.
-
-
-
-
-
-
+Figure \ref{fig:overhead} shows the overhead of SIGO and LSGO when the number of nodes and the shadowing parameter are varied.
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=80mm]{figures/overhead.eps}
 \caption{Routing protocol overhead vs. number of nodes and shadowing intensity }
 \label{fig:overhead}
 \end{figure}
+The overhead is the total number of data packets transmitted by all nodes in the entire network divided by the total number of data packets successfully received by the destination nodes.
+Figure 15 tells us: (1) The overhead of both LSGO and SIGO decreases with an increase in the number of nodes; (2) the overhead improvement of SIGO over LSGO increases with an increase in the shadowing parameter; (3) the difference in overhead between SIGO and LSGO becomes smaller with an increase in the number of nodes. The reason for (1) is that the total number of data packets successfully received by the destination node increases for both LSGO and SIGO, increasing the number of nodes. The reason for (2) is that the total number of data packets successfully received by the destination node increases in SIGO than in LSGO, increasing the shadowing parameter. In addition, this means that even though the total number of data packets successfully received by destination nodes increases in SIGO, the total number of data packets transmitted by all nodes does not increase signiﬁcantly compared to LSGO. The reason for (3) is that when the number of nodes is large, rebroadcasting by the intersection node does not always result in efficient communication. Suppose there is a building in the direction of the destination node and a street intersection node rebroadcasts the packet in SIGO. In that case, nodes on two different roads forming the intersection are likely to be selected as relay candidate nodes when the number of nodes large. In this situation, the possibility that a low priority candidate node cannot receive packets from a high-priority relay candidate node due to the shadowing effect of a building increases. As a result, redundant rebroadcasting increases because the rebroadcasting by a low-priority relay candidate node is not canceled. Figure \ref{fig:overhead_reason} shows an example of this situation. The packets rebroadcasted by the street intersection node are received by nodes 1-4. Nodes 1, 2, 3, and 4 have a higher priority in that order. Ideally, only node 1 should rebroadcast the data packet. However, even if node 1 rebroadcasts the packet, nodes 3 and 4 cannot receive it due to the shadowing effect and rebroadcast.
+
+
+
+
 
 \begin{figure}[!ht]
 \centering
@@ -660,9 +663,10 @@ Figure \ref{fig:overhead} shows the overhead of SIGO and LSGO when the number of
 
 \section{Conclusion}
 \label{conclusion}
-We evaluated an existing opportunistic routing protocol under the impact of shadowing in a simulation. We demonstrated that the existing routing protocol degrades the communication performance when the effect of shadowing fading is considered in the simulation. 
-We also proposed SIGO, which forms routes that are less susceptible to shadowing, and demonstrated its effectiveness in terms of improving the packet delivery ratio and reducing the overhead. 
-Future work should include optimizing the number of relay candidate nodes, which was set to a fixed value in  our experiments. Furthermore, we plan to evaluate more complex simulation scenarios and redesign the SIGO routing protocol to support  various scenarios.
+% We evaluated an existing opportunistic routing protocol under the impact of shadowing in a simulation. We demonstrated that the existing routing protocol degrades the communication performance when the effect of shadowing fading is considered in the simulation. 
+We proposed SIGO, which forms routes that are less susceptible to shadowing, and demonstrated its effectiveness in terms of improving the packet delivery ratio and reducing the overhead. 
+Future work should include optimizing the number of relay candidate nodes, which was set to a fixed value in  our experiments. 
+% Furthermore, we plan to evaluate more complex simulation scenarios and redesign the SIGO routing protocol to support  various scenarios.
 
 
 %\newpage
@@ -670,7 +674,7 @@ Future work should include optimizing the number of relay candidate nodes, which
 \bibliographystyle{IEEEtran}
 \bibliography{shuto}
 
-
+\vspace{-1.0cm}
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{TakahashiShuto.eps}}]{Shuto Takahashi}
 Received his B.E.degrees in Engineering from Ritsumeikan University in 2020. He enterd same university in April 2020, where he is currently master's student. His current research interests include vehicular ad-hoc networks.
 \end{IEEEbiography}
@@ -681,7 +685,7 @@ Received his B.E., M.E. degrees in Engineering from Ritsumeikan University in 20
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{Gallegos.eps}}]{Alberto Gallegos}
 Received his M.S. and Ph.D. degrees in Engineering from Ritsumeikan University in 2014 and 2018 respectively. From April 2018 to September 2021, he was an Assistant Professor at the same University. He joined the Graduate School of Technology, Industrial and Social Sciences at Tokushima University in October 2021, where he is currently Assistant Professor. His current research interests include but are not limited to Wireless Sensor Networks, data mining, routing protocols, MAC layer designs and Internet of things applications.
 \end{IEEEbiography}
-\vspace{-17cm}
+% \vspace{-17cm}
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{NoguchiTaku.eps}}]{Taku Noguchi}
 He received the B.E., M.E., and Ph.D. degrees in communications 
 engineering from Osaka University, Osaka, Japan in 2000, 2002, and 2004, 

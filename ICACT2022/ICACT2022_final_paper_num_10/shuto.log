@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021/W32TeX) (preloaded format=uplatex 2021.6.6)  10 DEC 2021 01:49
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021/W32TeX) (preloaded format=uplatex 2021.6.6)  10 DEC 2021 00:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -368,297 +368,403 @@ File: l3backend-dvips.def 2021-05-07 L3 backend support: dvips
 ) (./shuto.aux)
 \openout1 = `shuto.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/b/n' in size <5> not available
-(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <5> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 16.
+(Font)              scaled to size 4.8111pt on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/b/n' in size <5> not available
-(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <5> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 16.
+(Font)              scaled to size 4.8111pt on input line 15.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 16.
+(Font)              No change on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/b/n' in size <7> not available
-(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <7> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 16.
+(Font)              scaled to size 6.73553pt on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/b/n' in size <7> not available
-(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <7> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 16.
+(Font)              scaled to size 6.73553pt on input line 15.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 16.
+(Font)              No change on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/b/n' in size <8> not available
-(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <8> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 16.
+(Font)              scaled to size 7.69775pt on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/b/n' in size <8> not available
-(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <8> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 16.
+(Font)              scaled to size 7.69775pt on input line 15.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 16.
+(Font)              No change on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/b/n' in size <9> not available
-(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <9> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 16.
+(Font)              scaled to size 8.65997pt on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/b/n' in size <9> not available
-(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <9> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 16.
+(Font)              scaled to size 8.65997pt on input line 15.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 16.
+(Font)              No change on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/b/n' in size <10> not available
-(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 16.
+(Font)              scaled to size 9.6222pt on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/b/n' in size <10> not available
-(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 16.
+(Font)              scaled to size 9.6222pt on input line 15.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 16.
+(Font)              No change on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/b/n' in size <11> not available
-(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <11> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 10.58441pt on input line 16.
+(Font)              scaled to size 10.58441pt on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/b/n' in size <11> not available
-(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <11> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 10.58441pt on input line 16.
+(Font)              scaled to size 10.58441pt on input line 15.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 16.
+(Font)              No change on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/b/n' in size <12> not available
-(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 16.
+(Font)              scaled to size 11.54663pt on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/b/n' in size <12> not available
-(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 16.
+(Font)              scaled to size 11.54663pt on input line 15.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 16.
+(Font)              No change on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/b/n' in size <17> not available
-(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <17> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 16.35773pt on input line 16.
+(Font)              scaled to size 16.35773pt on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/b/n' in size <17> not available
-(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <17> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 16.35773pt on input line 16.
+(Font)              scaled to size 16.35773pt on input line 15.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 16.
+(Font)              No change on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/b/n' in size <20> not available
-(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <20> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 19.24438pt on input line 16.
+(Font)              scaled to size 19.24438pt on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/b/n' in size <20> not available
-(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <20> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 19.24438pt on input line 16.
+(Font)              scaled to size 19.24438pt on input line 15.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 16.
+(Font)              No change on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/b/n' in size <24> not available
-(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JT2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <24> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 23.09326pt on input line 16.
+(Font)              scaled to size 23.09326pt on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/b/n' in size <24> not available
-(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 16.
+(Font)              Font shape `JY2/mc/bx/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <24> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 16.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 23.09326pt on input line 16.
+(Font)              scaled to size 23.09326pt on input line 15.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 16.
+(Font)              No change on input line 15.
 
 -- Lines per column: 56 (exact).
 (I search kanjifont definition file: . . )
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 50.
+(Font)              No change on input line 52.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 50.
+(Font)              No change on input line 52.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 50.
-LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 50.
+(Font)              No change on input line 52.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 52.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 52.
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 52.
  (c:/w32tex/share/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/b/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 50.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 52.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 50.
+(Font)              No change on input line 52.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 50.
+(Font)              No change on input line 52.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 50.
+(Font)              No change on input line 52.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 50.
+(Font)              No change on input line 52.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 50.
+(Font)              No change on input line 52.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 50.
-LaTeX Font Info:    Kanji font shape `JY2/mc/b/it' undefined
+(Font)              No change on input line 52.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 52.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 52.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 52.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
 (Font)              No change on input line 52.
 LaTeX Font Info:    Kanji font shape `JY2/mc/b/it' undefined
-(Font)              No change on input line 63.
+(Font)              No change on input line 54.
+LaTeX Font Info:    Kanji font shape `JY2/mc/b/it' undefined
+(Font)              No change on input line 64.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
-(Font)              No change on input line 67.
+(Font)              No change on input line 68.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 81.
-LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
-(Font)              No change on input line 93.
-LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 96.
-File: figures/basic-opportunity2.eps Graphic file (type eps)
- <figures/basic-opportunity2.eps> [1
+(Font)              No change on input line 83.
+ [1
 
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 108.
- (c:/w32tex/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
+(Font)              No change on input line 102.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 105.
+File: figures/basic-opportunity2.eps Graphic file (type eps)
+ <figures/basic-opportunity2.eps>
+Overfull \hbox (4.0748pt too wide) in paragraph at lines 111--112
+ [][] 
+ []
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 117.
+(c:/w32tex/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 108.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 117.
  (c:/w32tex/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 1939) in paragraph at lines 118--118
+Underfull \hbox (badness 1939) in paragraph at lines 127--128
 []\OT1/ptm/m/n/10 Opportunistic multi-hop rout-ing for wire-less net-works
  []
 
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 130.
-File: figures/efficient_route.eps Graphic file (type eps)
-<figures/efficient_route.eps>
-LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
-(Font)              No change on input line 353.
-LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 361.
-LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 363.
-LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 366.
- [2]
-LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 373.
-LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 395.
-LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 418.
-File: figures/closest_road.eps Graphic file (type eps)
- <figures/closest_road.eps>
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 467.
- (c:/w32tex/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [3]
-File: figures/Intersection_angle.eps Graphic file (type eps)
- <figures/Intersection_angle.eps>
-LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 522.
-LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
-(Font)              No change on input line 545.
-File: figures/scenario.eps Graphic file (type eps)
- <figures/scenario.eps>
-LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
-(Font)              No change on input line 578.
+(Font)              No change on input line 142.
+File: figures/Gray-Zone.eps Graphic file (type eps)
+<figures/Gray-Zone.eps>
+Overfull \hbox (4.0748pt too wide) in paragraph at lines 149--150
+ [][] 
+ []
 
-Overfull \hbox (19.79868pt too wide) in paragraph at lines 580--596
+[2]
+File: figures/intersection_routing.eps Graphic file (type eps)
+ <figures/intersection_routing.eps>
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
+(Font)              No change on input line 171.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 183.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 207.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 217.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 223.
+File: figures/scenario.eps Graphic file (type eps)
+ <figures/scenario.eps> [3]
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
+(Font)              No change on input line 253.
+
+Overfull \hbox (19.79868pt too wide) in paragraph at lines 255--272
  [][][] 
  []
 
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 277.
+File: figures/LSGO_PDR.eps Graphic file (type eps)
+<figures/LSGO_PDR.eps>
+File: figures/LSGO_delay.eps Graphic file (type eps)
+ <figures/LSGO_delay.eps>
+File: figures/LSGO_overhead.eps Graphic file (type eps)
+ <figures/LSGO_overhead.eps>
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 315.
+ [4]
+File: figures/efficient_route.eps Graphic file (type eps)
+ <figures/efficient_route.eps>
+Overfull \hbox (4.0748pt too wide) in paragraph at lines 333--334
+ [][] 
+ []
+
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
+(Font)              No change on input line 340.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 348.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 350.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 353.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 360.
+ [5]
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 371.
+File: figures/Hellopacket_format.eps Graphic file (type eps)
+ <figures/Hellopacket_format.eps>
+File: figures/data_packet_format.eps Graphic file (type eps)
+ <figures/data_packet_format.eps>
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 400.
+File: figures/closest_road.eps Graphic file (type eps)
+ <figures/closest_road.eps>
+Overfull \hbox (4.0748pt too wide) in paragraph at lines 418--419
+ [][] 
+ []
+
+File: figures/Intersection_angle.eps Graphic file (type eps)
+<figures/Intersection_angle.eps>
+Overfull \hbox (4.0748pt too wide) in paragraph at lines 458--459
+ [][] 
+ []
+
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 464.
+[6]
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 472.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 487.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 498.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
+(Font)              No change on input line 521.
 File: figures/PDR.eps Graphic file (type eps)
-<figures/PDR.eps> [4]
+ <figures/PDR.eps>
+Overfull \hbox (4.0748pt too wide) in paragraph at lines 536--537
+ [][] 
+ []
+
+[7]
 File: figures/delay.eps Graphic file (type eps)
  <figures/delay.eps>
+Overfull \hbox (4.0748pt too wide) in paragraph at lines 556--557
+ [][] 
+ []
+
 File: figures/overhead.eps Graphic file (type eps)
- <figures/overhead.eps> [5]
+<figures/overhead.eps>
+Overfull \hbox (4.0748pt too wide) in paragraph at lines 572--573
+ [][] 
+ []
+
 File: figures/overhead_reason.eps Graphic file (type eps)
- <figures/overhead_reason.eps>
+<figures/overhead_reason.eps>
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
-(Font)              No change on input line 664.
- (./shuto.bbl
+(Font)              No change on input line 586.
+ [8] (./shuto.bbl
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
 (Font)              No change on input line 2.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
-(Font)              No change on input line 31.
+(Font)              No change on input line 28.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
-(Font)              No change on input line 34.
+(Font)              No change on input line 37.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
-(Font)              No change on input line 36.
+(Font)              No change on input line 40.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
-(Font)              No change on input line 41.
+(Font)              No change on input line 42.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
-(Font)              No change on input line 46.
+(Font)              No change on input line 52.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
-(Font)              No change on input line 55.
+(Font)              No change on input line 57.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
 (Font)              No change on input line 62.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
-(Font)              No change on input line 67.
+(Font)              No change on input line 71.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
-(Font)              No change on input line 73.
+(Font)              No change on input line 76.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
-(Font)              No change on input line 78.
+(Font)              No change on input line 80.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
-(Font)              No change on input line 84.
+(Font)              No change on input line 86.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
-(Font)              No change on input line 89.
+(Font)              No change on input line 91.
+LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
+(Font)              No change on input line 96.
+LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
+(Font)              No change on input line 101.
+LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
+(Font)              No change on input line 108.
+LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
+(Font)              No change on input line 113.
+LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
+(Font)              No change on input line 118.
+LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
+(Font)              No change on input line 121.
+LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
+(Font)              No change on input line 127.
+LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
+(Font)              No change on input line 133.
+LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
+(Font)              No change on input line 138.
+LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
+(Font)              No change on input line 142.
+LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
+(Font)              No change on input line 148.
+LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
+(Font)              No change on input line 159.
 )
 File: TakahashiShuto.eps Graphic file (type eps)
  <TakahashiShuto.eps>
@@ -667,7 +773,7 @@ File: TakahashiShuto.eps Graphic file (type eps)
 File: YoshidaMasami.eps Graphic file (type eps)
  <YoshidaMasami.eps>
 File: YoshidaMasami.eps Graphic file (type eps)
- <YoshidaMasami.eps>
+ <YoshidaMasami.eps> [9]
 File: Gallegos.eps Graphic file (type eps)
  <Gallegos.eps>
 File: Gallegos.eps Graphic file (type eps)
@@ -687,14 +793,16 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6] (./shuto.aux) ) 
-Here is how much of TeX's memory you used:
- 3773 strings out of 478979
- 55459 string characters out of 5858656
- 388552 words of memory out of 5000000
- 21923 multiletter control sequences out of 15000+600000
- 437147 words of font info for 133 fonts, out of 8000000 for 9000
- 929 hyphenation exceptions out of 8191
- 57i,9n,66p,2098b,541s stack positions out of 5000i,500n,10000p,500000b,200000s
+[10
 
-Output written on shuto.dvi (6 pages, 43888 bytes).
+] (./shuto.aux) ) 
+Here is how much of TeX's memory you used:
+ 3800 strings out of 478979
+ 56241 string characters out of 5858656
+ 391366 words of memory out of 5000000
+ 21947 multiletter control sequences out of 15000+600000
+ 436931 words of font info for 132 fonts, out of 8000000 for 9000
+ 929 hyphenation exceptions out of 8191
+ 57i,9n,66p,2225b,541s stack positions out of 5000i,500n,10000p,500000b,200000s
+
+Output written on shuto.dvi (10 pages, 64912 bytes).

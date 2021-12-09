@@ -35,11 +35,6 @@ D.~B. Johnson, D.~A. Maltz, J.~Broch \emph{et~al.}, ``Dsr: The dynamic source
   routing protocol for multi-hop wireless ad hoc networks,'' \emph{Ad hoc
   networking}, vol.~5, no.~1, pp. 139--172, 2001.
 
-\bibitem{5}
-T.~Clausen, P.~Jacquet, C.~Adjih, A.~Laouiti, P.~Minet, P.~Muhlethaler,
-  A.~Qayyum, and L.~Viennot, ``Optimized link state routing protocol (olsr),''
-  2003.
-
 \bibitem{6}
 B.~Karp and H.-T. Kung, ``Gpsr: Greedy perimeter stateless routing for wireless
   networks,'' \emph{Proceedings of the 6th annual international conference on
@@ -49,11 +44,6 @@ B.~Karp and H.-T. Kung, ``Gpsr: Greedy perimeter stateless routing for wireless
 C.~Lochert, M.~Mauve, H.~F{\"u}{\ss}ler, and H.~Hartenstein, ``Geographic
   routing in city scenarios,'' \emph{ACM SIGMOBILE mobile computing and
   communications review}, vol.~9, no.~1, pp. 69--72, 2005.
-
-\bibitem{8}
-K.~C. Lee, J.~H{\"a}rri, U.~Lee, and M.~Gerla, ``Enhanced perimeter routing for
-  geographic forwarding protocols in urban vehicular scenarios,'' \emph{2007
-  ieee globecom workshops}, pp. 1--10, 2007.
 
 \bibitem{9}
 V.~Naumov and T.~R. Gross, ``Connectivity-aware routing (car) in vehicular
