@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex shuto"] 1638979983 "shuto.aux" "shuto.bbl" "shuto" 1638980031
+["bibtex shuto"] 1639040618 "shuto.aux" "shuto.bbl" "shuto" 1639040651
   "c:/w32tex/share/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1440597370 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "shuto.aux" 1638980018 4633 7b37a9b15c9ac06c606ccb9883cfdbe4 "latex"
+  "shuto.aux" 1639040627 4602 1a5a04823f8f04bd691d3470fcc1fffb "latex"
   "shuto.bib" 1638898898 7552 e237122a256829006d4b37bc89fd3c97 ""
   (generated)
   "shuto.blg"
   "shuto.bbl"
-["dvipdf"] 1638980018 "shuto.dvi" "shuto.pdf" "shuto" 1638980031
-  "shuto.dvi" 1638980018 46704 7319cab7a8d9037e32890886dcfed863 "latex"
+["dvipdf"] 1639040628 "shuto.dvi" "shuto.pdf" "shuto" 1639040651
+  "shuto.dvi" 1639040627 45060 5f2f0c67cb653994ccaed9f0ee9044a2 "latex"
   (generated)
   "shuto.pdf"
-["latex"] 1638980014 "shuto.tex" "shuto.dvi" "shuto" 1638980031
+["latex"] 1639040618 "shuto.tex" "shuto.dvi" "shuto" 1639040651
   "Gallegos.eps" 1638898898 174551 a15c6f5a1354552a1b03f0bc16ab5473 ""
   "IEEEtran.cls" 1638898897 288304 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
   "NoguchiTaku.eps" 1638898898 3128503 04d72d235767c48a7732904d0bcc98d4 ""
@@ -76,11 +76,11 @@
   "figures/delay.eps" 1638898898 59056 5509bbdf4e3056b79a277eea7e8d5625 ""
   "figures/efficient_route.eps" 1638898898 82726 ef44d220fbf6a14eb38c9e682440d198 ""
   "figures/overhead.eps" 1638898898 55377 cd8a88bdd381379004588100dac71d7c ""
-  "figures/overhead_reason.eps" 1638898898 61188 e784d994b377d7c1c4266c4c9d8466f4 ""
+  "figures/overhead_reason.eps" 1638985422 58281 d85b16192ca49da65a142b1bdd8de905 ""
   "figures/scenario.eps" 1638898898 401547 96f8a4eb31372b8ded4306f8d703d069 ""
-  "shuto.aux" 1638980018 4633 7b37a9b15c9ac06c606ccb9883cfdbe4 "latex"
-  "shuto.bbl" 1638979983 4362 21a57e7b2cf3ab5c0bdfa9f19a08180b "bibtex shuto"
-  "shuto.tex" 1638980013 50547 dd70cffa3054f389eb3b3b82300502de ""
+  "shuto.aux" 1639040627 4602 1a5a04823f8f04bd691d3470fcc1fffb "latex"
+  "shuto.bbl" 1639040618 4138 0a0a70575830babb3c465127196a5be3 "bibtex shuto"
+  "shuto.tex" 1639040606 48745 aec8bd85a2dc5098027b20cde24b814c ""
   (generated)
   "shuto.dvi"
   "shuto.log"

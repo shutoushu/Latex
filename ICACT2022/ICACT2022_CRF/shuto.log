@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021/W32TeX) (preloaded format=uplatex 2021.6.6)  9 DEC 2021 01:13
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021/W32TeX) (preloaded format=uplatex 2021.6.6)  9 DEC 2021 18:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -572,87 +572,81 @@ LaTeX Font Info:    Kanji font shape `JY2/mc/b/it' undefined
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
 (Font)              No change on input line 67.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 80.
+(Font)              No change on input line 81.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
-(Font)              No change on input line 99.
+(Font)              No change on input line 93.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 102.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+(Font)              No change on input line 96.
  [1
 
 
 ]
 File: figures/basic-opportunity2.eps Graphic file (type eps)
  <figures/basic-opportunity2.eps>
-LaTeX Font Info:    Trying to load font information for U+msa on input line 114.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 108.
  (c:/w32tex/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 114.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 108.
  (c:/w32tex/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 1939) in paragraph at lines 124--125
+Underfull \hbox (badness 1939) in paragraph at lines 118--118
 []\OT1/ptm/m/n/10 Opportunistic multi-hop rout-ing for wire-less net-works
  []
 
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 137.
+(Font)              No change on input line 130.
 File: figures/efficient_route.eps Graphic file (type eps)
 <figures/efficient_route.eps>
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
-(Font)              No change on input line 360.
+(Font)              No change on input line 353.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 368.
+(Font)              No change on input line 361.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 363.
  [2]
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 370.
+(Font)              No change on input line 366.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
 (Font)              No change on input line 373.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 380.
+(Font)              No change on input line 395.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 412.
-LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 435.
+(Font)              No change on input line 418.
 File: figures/closest_road.eps Graphic file (type eps)
  <figures/closest_road.eps> [3]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 483.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 467.
  (c:/w32tex/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 File: figures/Intersection_angle.eps Graphic file (type eps)
  <figures/Intersection_angle.eps>
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 538.
+(Font)              No change on input line 522.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
-(Font)              No change on input line 561.
+(Font)              No change on input line 545.
 File: figures/scenario.eps Graphic file (type eps)
- <figures/scenario.eps> [4]
+ <figures/scenario.eps>
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
-(Font)              No change on input line 593.
+(Font)              No change on input line 578.
 
-Overfull \hbox (19.79868pt too wide) in paragraph at lines 595--611
+Overfull \hbox (19.79868pt too wide) in paragraph at lines 580--596
  [][][] 
  []
 
+[4]
 File: figures/PDR.eps Graphic file (type eps)
-<figures/PDR.eps>
+ <figures/PDR.eps>
 File: figures/delay.eps Graphic file (type eps)
- <figures/delay.eps> [5]
+ <figures/delay.eps>
 File: figures/overhead.eps Graphic file (type eps)
  <figures/overhead.eps>
-Overfull \hbox (4.0748pt too wide) in paragraph at lines 670--671
- [][] 
- []
-
 File: figures/overhead_reason.eps Graphic file (type eps)
-<figures/overhead_reason.eps>
+ <figures/overhead_reason.eps>
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
-(Font)              No change on input line 684.
- (./shuto.bbl
+(Font)              No change on input line 661.
+ [5] (./shuto.bbl
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/sc' undefined
 (Font)              No change on input line 2.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
@@ -678,12 +672,10 @@ LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
 (Font)              No change on input line 88.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
-(Font)              No change on input line 93.
+(Font)              No change on input line 94.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
 (Font)              No change on input line 99.
-LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
-(Font)              No change on input line 104.
- [6])
+)
 File: TakahashiShuto.eps Graphic file (type eps)
  <TakahashiShuto.eps>
 File: TakahashiShuto.eps Graphic file (type eps)
@@ -691,7 +683,7 @@ File: TakahashiShuto.eps Graphic file (type eps)
 File: YoshidaMasami.eps Graphic file (type eps)
  <YoshidaMasami.eps>
 File: YoshidaMasami.eps Graphic file (type eps)
- <YoshidaMasami.eps>
+ <YoshidaMasami.eps> [6]
 File: Gallegos.eps Graphic file (type eps)
  <Gallegos.eps>
 File: Gallegos.eps Graphic file (type eps)
@@ -715,12 +707,12 @@ Before submitting the final camera ready copy, remember to:
 
 ] (./shuto.aux) ) 
 Here is how much of TeX's memory you used:
- 3777 strings out of 478979
- 55477 string characters out of 5858656
- 388075 words of memory out of 5000000
- 21927 multiletter control sequences out of 15000+600000
+ 3776 strings out of 478979
+ 55473 string characters out of 5858656
+ 388321 words of memory out of 5000000
+ 21926 multiletter control sequences out of 15000+600000
  437147 words of font info for 133 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  57i,9n,66p,2225b,541s stack positions out of 5000i,500n,10000p,500000b,200000s
 
-Output written on shuto.dvi (7 pages, 46704 bytes).
+Output written on shuto.dvi (7 pages, 45060 bytes).
