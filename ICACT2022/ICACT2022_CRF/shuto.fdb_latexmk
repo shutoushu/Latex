@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex shuto"] 1639068855 "shuto.aux" "shuto.bbl" "shuto" 1639098985
+["bibtex shuto"] 1639141903 "shuto.aux" "shuto.bbl" "shuto" 1639141922
   "c:/w32tex/share/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1440597370 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "shuto.aux" 1639098967 4566 b050905eb2397810c8ea57a3c1dd1153 "latex"
+  "shuto.aux" 1639141908 4574 8eb22266ac684fa1fba6641064e981ce "latex"
   "shuto.bib" 1638898898 7552 e237122a256829006d4b37bc89fd3c97 ""
   (generated)
   "shuto.blg"
   "shuto.bbl"
-["dvipdf"] 1639098968 "shuto.dvi" "shuto.pdf" "shuto" 1639098985
-  "shuto.dvi" 1639098967 44068 ed667edd3e006bb96ffe07bf52d2f5fe "latex"
+["dvipdf"] 1639141909 "shuto.dvi" "shuto.pdf" "shuto" 1639141922
+  "shuto.dvi" 1639141908 44240 8b8c8b47dc5e49092505068c252a8867 "latex"
   (generated)
   "shuto.pdf"
-["latex"] 1639098962 "shuto.tex" "shuto.dvi" "shuto" 1639098985
+["latex"] 1639141904 "shuto.tex" "shuto.dvi" "shuto" 1639141922
   "Gallegos.eps" 1638898898 174551 a15c6f5a1354552a1b03f0bc16ab5473 ""
   "IEEEtran.cls" 1638898897 288304 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
   "NoguchiTaku.eps" 1638898898 3128503 04d72d235767c48a7732904d0bcc98d4 ""
@@ -78,10 +78,10 @@
   "figures/overhead.eps" 1638898898 55377 cd8a88bdd381379004588100dac71d7c ""
   "figures/overhead_reason.eps" 1638985422 58281 d85b16192ca49da65a142b1bdd8de905 ""
   "figures/scenario.eps" 1638898898 401547 96f8a4eb31372b8ded4306f8d703d069 ""
-  "shuto.aux" 1639098967 4566 b050905eb2397810c8ea57a3c1dd1153 "latex"
-  "shuto.bbl" 1639068856 3751 f971c517387d186e31f0044426561ff9 "bibtex shuto"
-  "shuto.tex" 1639098960 49263 9159d82d8711af9f12d0f54061ea715f ""
+  "shuto.aux" 1639141908 4574 8eb22266ac684fa1fba6641064e981ce "latex"
+  "shuto.bbl" 1639141904 3751 f971c517387d186e31f0044426561ff9 "bibtex shuto"
+  "shuto.tex" 1639141896 49409 c97dd9c721e9270e8f59b55acc53eb41 ""
   (generated)
-  "shuto.log"
   "shuto.aux"
+  "shuto.log"
   "shuto.dvi"
