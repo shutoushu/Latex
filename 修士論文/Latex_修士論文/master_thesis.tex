@@ -1,0 +1,128 @@
+%　修士論文テンプレート
+
+\documentclass[10pt]{jreport}
+
+\usepackage{master_thesis}
+\usepackage{./grad}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{here}
+\usepackage{url}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{comment}
+
+% A4 : width 21cm, height 29.7cm
+\usepackage[a4paper,textheight=21.7cm,top=3cm,left=2cm,right=2cm,headheight=15pt]{geometry}
+
+\年度{2021}
+\題目{VANETにおける車両位置とリンク状態を考慮した地理的
+opportunistic routing}
+\指導教官{野口 拓}
+\学籍番号{6611200033-0}
+\氏名{高橋 柊人}
+\コース{計算機科学コース} %計算機科学コース or 人間情報科学コース
+
+
+\begin{document}
+% 表紙 %%%
+\maketitle
+
+
+\renewcommand{\thepage}{\roman{page}}
+\setcounter{page}{1}
+\addcontentsline{toc}{chapter}{内容梗概}
+\chapter*{内容梗概}
+本論文は,筆者が立命館大学情報理工学研究科において行った「VANETにおける車両位置とリンク状態を考慮した地理的
+opportunistic routing」の成果をまとめたものである.
+
+test
+
+
+\newpage
+\pagestyle{myheadings}
+\renewcommand{\thepage}{\roman{page}}
+%\setcounter{page}{1}
+\addcontentsline{toc}{chapter}{目次}
+%\setcounter{page}{1}
+\tableofcontents
+
+
+\newpage
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}
+\chapter{緒論}
+\vspace{-5mm}
+
+高速道路や一般道での無謀な運転や不注意運転によるほかのドライバへの危険が問題となっている. もし, これらの危険行為を行う車両の接近を遭遇する以前に知ることができれば, 多くの事故を減らすことができる可能性がある. 交通死亡事故の原因の中では, 規制速度を超過した場合の割合が31.6％\cite{1}と, 速度違反が死亡事故につながることがわかる. また, 交通事故死亡者数と取り締まり件数に注目すると, 取り締まりが増加すると死者数が減少するデータもある. これらのことから, 交通事故の死亡者数を減らすためには, より多くの速度超過の監視が求められる. 
+ 
+
+そこで本論文では, VANETを用いたブロードキャスト数を最小限に抑えたVANETを用いた速度超過車両検出手法を提案する.速度超過車両の検出確率や,ブロードキャスト数を調査し,有効性を示す.
+
+第2章では, VANETの概要を説明し, 既存方式について述べる. 第3章では, VANETを用いた速度推定法, ネットワークトラヒック量の削減を目的としたブロードキャスト制御アルゴリズムについて述べる. 第4章では, 評価方法について述べ, 本研究の評価方法を基に検証した結果をまとめる. 第5章は結論であり, 本研究の主な結果をまとめる. 
+
+
+
+\chapter{VANET}
+\vspace{-5mm}
+\section{概要}
+近年, 情報通信技術の発達により, 無線通信を用いて車両間または, 路車間で情報をやり取りすることによって交通事故や渋滞などの道路交通問題の解決を目指す高度道路交通システム(ITS:Inteligent Transport System)が注目を浴びている\cite{sample7}. ITSの代表的なサービスとして, 渋滞情報と連動した高度なナビゲーションシステム(VICS::Vehicle Information and Communication System)\cite{sample8}や, 自動料金収受システム(ETC:Electronic Toll Collection)\cite{sample9}などがあげられる. これらのサービスを支える技術として, 路車間通信と車両アドホックネットワーク(VANET)がある. 路車間通信は車両が路側機のインフラ設備との無線通信により情報のやりとりを行う. しかし, 路車間通信はインフラ設備の設置にかかる費用と, 設置場所が限定される可能性があるという問題が存在する. 一方, VANETは車両同士で通信を行うためインフラ設備の整備されていない不特定の場所でも通信を行うことが可能になる. VANETのアプリケーションとして, 渋滞回避情報の伝搬, 緊急車両情報の警告など, 安全運転支援に期待されている. 
+\section{車車間通信}
+車車間通信は車両と車両との間で無線通信を行い, 情報のやり取りを行うものである. 車車間通信を図2.1に示す. 車車間通信では, 端末同士（車両同士）で自律的にネットワークを構築し, 宛先に直接通信できない場合には間の車両が中継車両となり, マルチホップ通信を行う. 車車間通信のメリットは固定のインフラを必要とせず車両間のみで通信が可能になり, インフラが存在しない地点で通信が可能になることである. 
+\section{路車間通信}
+路車間通信は, 道路に設置された路側機(RSU:Road Side Unit)と車両で無線通信を行い　
+様々な情報の交換を行うものである. 路車間通信を図2.1に示す.  路車間通信の代表的なサービスとしてVICS(Vehicle Information and Communication System)やETC(Electronic Toll Collection)がある. VICSは, 各道路に設置されたビーコンから道路交通情報を発信し, 車載のカーナビや高速道路の電子掲示板に高速道路の渋滞の情報, 区間を通過するための所要時間, 駐車場情報などを表示する「ナビゲーションシステム高度化」を目指したサービスである. ETCは高速道路の入り口に設置されている通信機と車載の通信機で無線通信を行い, 料金所に止まることなく, 自動でスムーズに料金の支払いができるシステムである. 料金所での一時停止が渋滞の原因の一つであったが, ETCの導入で渋滞を解消することができた. 
+
+
+
+
+%図の入れ方
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{figures/2_2.png}
+\caption{車車間通信と路車間通信}
+\end{figure}
+
+
+\section{ルーチングプロトコル}
+VANETを都市環境で展開する場合, 高速な移動, 不均一な車両密度, 樹木や建物による電波の遮断など様々な要件を考慮する必要がある. この様々な要件に対応するため, 多種多様なルーチングプロトコルが提案されている\cite{2}. 次節以降でそれぞれのルーチングプロトコルの特徴について述べる.
+
+\subsection{Topology-based routing}
+Topology-base routing\cite {3,4,5} は, ネットワークに存在するリンクに関する情報を使用して, パケット転送を行う方式である. Topology-based routingはProactive型とReactive型に分類できる. 前者は, ノード間で周期的な制御パケットの交換を行うことにより, 各ノードがすべての宛先ノードへの経路情報を常時保持する方式である. 後者は, 最初は経路情報は保持しておらず, 通信要求が生じてから, 制御パケットを交換し経路情報を作成する方式である. 前者と比較して後者は, 制御パケットのオーバヘッドを抑えられるというメリットがある. 
+しかし, これらのTopology-based routingは, ノードが頻繁に移動するVANETにおいては, 経路情報を定期的に変更する必要がある.
+したがって, 制御パケットのオーバーヘッドが増加するためVANETには適していない.
+
+\subsection{Geographic routing}
+Geographic routing\cite{6,7,8,9,10,11,12,13,14,15} は, 隣接ノードの位置情報と宛先ノード尾の位置に基づいてパケット転送を行う方式である. このタイプのルーチングプロトコルは, Topology-based routingのように確立されたルートを維持する必要がない. したがってGeographic routingは制御パケットを使用する必要がないため, 少ないパケット数でトポロジーの変化に対応することができる. Greedy fowardingはGeographic routingにおいて有名な方式の一つである. Greedy fowardingは隣接ノードの中で最も宛先ノードに近いノードを中継ノードとして選択することで, ホップ数やオーバヘッドの削減を示している. しかし, 実際の都市環境では, 建物によるシャドウイングや距離による電波強度の低下によりパケットのドロップ率が高くなる可能性がある. 
+
+\subsection{Opportunistic routing}
+Topology-base routing\cite {3,4,5} は, 
+
+\subsection{Topology-based routing}
+Topology-base routing\cite {3,4,5} は, 
+
+\addcontentsline{toc}{chapter}{謝辞}
+\chapter*{謝辞}
+\sloppy
+本論文では筆者が立命館大学情報理工学部情報コミュニケーション学科におい
+て行なった「VANETを用いた速度超過車両検出のためのブロードキャスト制御法」の成果をまとめたものである．
+
+本研究を遂行するにあたり,全過程を通じて懇切丁寧なる御指導,御鞭撻を賜わっ
+た,立命館大学情報理工学部野口~拓教授に深甚なる感謝の意を表す．
+
+立命館大学情報理工学部において,御指導,御教授を賜わった立命館大学情報理工学部Alberto Gallegos Ramonet特任助教, 前田~忠彦教授, 山本~寛准教授, 西村~俊和准教授, 瀧本~栄二助教を始め,各教員の方々に衷心より御礼申し上げる．
+
+%本研究を遂行するにあたり,終始一貫して直接御指導戴いたネットワークシステム研究室の野口~拓講師に深甚なる感謝の意を表す．
+
+ネットワークシステム研究室の諸兄には,日頃より多くの御助言,御協力戴き,種々の面でお世話になった．ここに深謝申し上げる．
+
+ここに記して,以上の方々に深甚なる感謝の意を捧げる．
+
+\addcontentsline{toc}{chapter}{参考文献}
+
+%\newpage
+
+\bibliographystyle{IEEEtran}
+\bibliography{shuto}
+
+
+\end{document}
