@@ -17,45 +17,45 @@ Warning--I didn't find a database entry for "sample9"
 Warning--empty journal in 5
 
 Done.
-You've used 15 entries,
+You've used 23 entries,
             4087 wiz_defined-function locations,
-            899 strings with 10135 characters,
-and the built_in function-call counts, 12105 in all, are:
-= -- 998
-> -- 303
-< -- 115
-+ -- 168
-- -- 50
-* -- 580
-:= -- 1784
-add.period$ -- 30
-call.type$ -- 15
-change.case$ -- 15
-chr.to.int$ -- 267
-cite$ -- 16
-duplicate$ -- 854
-empty$ -- 877
-format.name$ -- 65
-if$ -- 2810
+            946 strings with 11605 characters,
+and the built_in function-call counts, 18758 in all, are:
+= -- 1573
+> -- 448
+< -- 186
++ -- 249
+- -- 71
+* -- 895
+:= -- 2785
+add.period$ -- 46
+call.type$ -- 23
+change.case$ -- 24
+chr.to.int$ -- 432
+cite$ -- 24
+duplicate$ -- 1318
+empty$ -- 1353
+format.name$ -- 92
+if$ -- 4360
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 140
-newline$ -- 68
-num.names$ -- 15
-pop$ -- 320
+int.to.str$ -- 23
+missing$ -- 210
+newline$ -- 92
+num.names$ -- 23
+pop$ -- 461
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 929
+skip$ -- 1445
 stack$ -- 0
-substring$ -- 648
-swap$ -- 730
-text.length$ -- 26
+substring$ -- 1042
+swap$ -- 1137
+text.length$ -- 42
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 15
+type$ -- 23
 warning$ -- 1
-while$ -- 61
-width$ -- 17
-write$ -- 165
+while$ -- 101
+width$ -- 25
+write$ -- 246
 (There were 4 warnings)

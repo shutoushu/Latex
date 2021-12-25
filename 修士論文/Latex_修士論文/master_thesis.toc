@@ -9,6 +9,8 @@
 \contentsline {subsection}{\numberline {2.4.1}Topology-based routing}{3}{}%
 \contentsline {subsection}{\numberline {2.4.2}Geographic routing}{4}{}%
 \contentsline {subsection}{\numberline {2.4.3}Opportunistic routing}{4}{}%
-\contentsline {subsection}{\numberline {2.4.4}Topology-based routing}{4}{}%
-\contentsline {chapter}{謝辞}{4}{}%
-\contentsline {chapter}{参考文献}{5}{}%
+\contentsline {subsection}{\numberline {2.4.4}Geocast routing}{7}{}%
+\contentsline {section}{\numberline {2.5}Local optimum problem}{7}{}%
+\contentsline {section}{\numberline {2.6}Recovery strategy}{8}{}%
+\contentsline {chapter}{謝辞}{8}{}%
+\contentsline {chapter}{参考文献}{10}{}%

@@ -76,7 +76,7 @@ test
 
 
 %図の入れ方
-\begin{figure}[H]
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=15cm]{figures/2_2.png}
 \caption{車車間通信と路車間通信}
@@ -84,21 +84,98 @@ test
 
 
 \section{ルーチングプロトコル}
-VANETを都市環境で展開する場合, 高速な移動, 不均一な車両密度, 樹木や建物による電波の遮断など様々な要件を考慮する必要がある. この様々な要件に対応するため, 多種多様なルーチングプロトコルが提案されている\cite{2}. 次節以降でそれぞれのルーチングプロトコルの特徴について述べる.
+\label{RoutingProtocol}
+VANETを都市環境で展開する場合, 高速な移動性, 不均一な車両密度, 樹木や建物による電波の遮断など様々な要件を考慮する必要がある. この様々な要件に対応するため, 多種多様なルーチングプロトコルが提案されている\cite{2}. 次節以降でそれぞれのルーチングプロトコルの特徴について述べる.
 
 \subsection{Topology-based routing}
+\label{Topology}
 Topology-base routing\cite {3,4,5} は, ネットワークに存在するリンクに関する情報を使用して, パケット転送を行う方式である. Topology-based routingはProactive型とReactive型に分類できる. 前者は, ノード間で周期的な制御パケットの交換を行うことにより, 各ノードがすべての宛先ノードへの経路情報を常時保持する方式である. 後者は, 最初は経路情報は保持しておらず, 通信要求が生じてから, 制御パケットを交換し経路情報を作成する方式である. 前者と比較して後者は, 制御パケットのオーバヘッドを抑えられるというメリットがある. 
 しかし, これらのTopology-based routingは, ノードが頻繁に移動するVANETにおいては, 経路情報を定期的に変更する必要がある.
 したがって, 制御パケットのオーバーヘッドが増加するためVANETには適していない.
 
 \subsection{Geographic routing}
-Geographic routing\cite{6,7,8,9,10,11,12,13,14,15} は, 隣接ノードの位置情報と宛先ノード尾の位置に基づいてパケット転送を行う方式である. このタイプのルーチングプロトコルは, Topology-based routingのように確立されたルートを維持する必要がない. したがってGeographic routingは制御パケットを使用する必要がないため, 少ないパケット数でトポロジーの変化に対応することができる. Greedy fowardingはGeographic routingにおいて有名な方式の一つである. Greedy fowardingは隣接ノードの中で最も宛先ノードに近いノードを中継ノードとして選択することで, ホップ数やオーバヘッドの削減を示している. しかし, 実際の都市環境では, 建物によるシャドウイングや距離による電波強度の低下によりパケットのドロップ率が高くなる可能性がある. 
+\label{Geographic}
+Geographic routing\cite{6,7,8,9,10,11,12,13,14,15} は, 隣接ノードの位置情報と宛先ノードの位置に基づいてパケット転送を行う方式である. このタイプのルーチングプロトコルは, Topology-based routingのように確立されたルートを維持する必要がない. したがってGeographic routingは制御パケットを使用する必要がないため, 少ないパケット数でトポロジーの変化に対応することができる. Greedy fowardingはGeographic routingにおいて有名な方式の一つである. Greedy fowardingは隣接ノードの中で最も宛先ノードに近いノードを中継ノードとして選択することで, ホップ数やオーバヘッドの削減を示している. しかし, 実際の都市環境では, 建物によるシャドウイングや距離による電波強度の低下によりパケットのドロップ率が高くなる可能性がある. 
 
 \subsection{Opportunistic routing}
+\label{Opportunistic}
+上記のルーチングの問題点を解決できる可能性がある, Opportunistic routing\cite{16} が近年注目を集めている. Opportunistic routingと前述したルーチングプロトコルとの主な違いは固定経路を使用せず, 送信ノードが次の中継ノードを１つに決定しないことである(図\ref{fig:Gegraphic_opportunistic}). Opportunistic routingではブロードキャストの性質を利用し, 受信したノード同士が協調しパケットを再ブロードキャストするか否かを決定することでパケット到達率の向上とオーバーヘッドの削減を果たしている. 
+
+Opportunistic routingは主に次の4ステップで構成されている.
+
+\begin{itemize}
+	\item 中継候補ノードセット(RCS) の選択
+	\item RCSの優先順位を決定
+	\item RCSへのブロードキャスト
+	\item 優先順位に応じた再ブロードキャストをするか否かの決定(RCS同士の協調)
+\end{itemize}
+
+図\ref{fig:Basic1}, \ref{fig:Basic2}にOpportunistic routingの基本モデルを示す.
+$N_{s}$が送信ノード, $N_{d}$が宛先ノードである. 送信ノード$N_{s}$はRCSとして$N_{1}$ ～ $N_{n}$を選択する. 次に送信ノードは選択したRCSそれぞれに優先順位を指定してパケットをブロードキャストする. 受信した$N_{1}$ ～ $N_{n}$のノードはそれぞれ自身の優先順位を確認し, 中継タイマー(待ち時間)を設定する. 中継タイマーは優先順位が高いノードほど早くタイムアウトするように設定し, タイマーが切れたノードから再ブロードキャストを行う. 自身の中継タイマーが切れる前に自身より優先順位が高いノードの再ブロードキャストを受信した場合, 自身の再ブロードキャストをキャンセルし, 冗長なパケットの増加を防ぐ.
+ 
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=150mm]{figures/difference_geographic_opportunistic.eps}
+	\caption{Geographic routingとOpportunistic routing}
+	\label{fig:Gegraphic_opportunistic}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=90mm]{figures/basic-opportunity1.eps}
+	\caption{Opportunistic routingの基本モデル1}
+	\label{fig:Basic1}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=90mm]{figures/basic-opportunity2.eps}
+	\caption{Opportunistic routingの基本モデル2}
+	\label{fig:Basic2}
+\end{figure}
+
+これらのことから, Opportunistic routingにおいて, 優先順位決定アルゴリズムが通信性能に直接影響を及ぼすことがわかる.
+
+代表的なOpportunistic routingとしてOpportunistic multi-hop routing fo wireless networks(EXOR) \cite{16}が提案されている. これは, RCSの優先順位を決定するメトリックとして, Expected transmission cost(ETX) \cite{21}を用いている. しかし, ETX値はVANETの性質であるノードのランダムで高速なモビリティを考慮していないという問題がある.
+
+そこで, 新たにVANETに適したETX値を考案したLink state aware geographic opportunistic routing protocol(LSGO) \cite{18}が提案された. LSGOでは, VANET用に最適化されたETX値をRCSの優先順位を決定するメトリックとして使用し, パケット到達率の向上, エンドツーエンド遅延の減少を実現している. また, Collision-aware opportunistic routing protocol (SCAOR) \cite{22}では, パケットの衝突でネットワークパフォーマンスを低下させる問題を防ぐために, ノード密度パラメータをRCSの優先順位を決定するメトリックとして追加した. その結果, 高速道路においてEXORやLSGOに比べ通信性能が向上することを示している. Hybrid opportunistic and position-based routing  protocol (OPBR) \cite{23}では, パケットがRCSに到達しない場合, 遅延が増加するという問題を解決するために, 隣接ノードの位置情報からリンクの切断を推測した. この結果パケット到達率の向上, エンドツーエンド遅延の減少を示している.
+
+しかし, 既存のopportunistic routingの多くは, 都市環境を想定して考案されているが, 性能評価で建物によるシャドウイングの影響が考慮されておらず, 通信性能を過大評価している可能性がある. また, これによりシャドウイングの影響を考慮したルーティングプロトコルが設計されていない可能性がある. 
+
+そこで, 本研究では, 既存opportunistic routingであるLSGOをネットワークシミュレータNS-3\cite{19}のシャドウイングモデルであるObstacle Shadowing Model\cite{20}を用いて評価し, 建物によるシャドウイングが起こる場合と起こらない場合の通信性能を検証し, 問題点を明らかにする.
+
+
+
+
+
+\subsection{Geocast routing}
 Topology-base routing\cite {3,4,5} は, 
 
-\subsection{Topology-based routing}
-Topology-base routing\cite {3,4,5} は, 
+\section{Local optimum problem}
+\label{local_optimum_problem}
+\ref{Geographic}節で紹介したGeographic routingの既存研究では, 各送信ノードは自分より宛先ノードに近い隣接ノードの中から中継ノードとして最適なノードを１つ選択する. 同様に\ref{Opportunistic}節で紹介した多くのVANET用に設計されたOpportunistic routingにおいても, 各送信ノードは自分より宛先ノードに近い隣接ノードの中からCRSを選択する. しかし, 時には自分より宛先ノードに近い隣接ノードが存在しない場合が発生する. この問題をLocal optimum problem\cite{6}と呼ぶ. Local optimum problemは,　図\ref{fig:Local_optimum}のように建物による電波の遮断が起きやすい都市環境では発生確率が上昇する. したがって, 特にVANETにおいて自分より宛先ノードに近い隣接ノードから中継ノードを選択するタイプのルーティングでは, この問題を防ぐアプローチと発生した場合の対処法(recovery strategy) の考案が必用である.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=130mm]{figures/Local_optimum_problem.eps}
+	\caption{Local optimum problem}
+	\label{fig:Local_optimum}
+\end{figure}
+
+\section{Recovery strategy}
+前節で説明したLocal optimum problemがルーチング中に発生した場合, これに対処する中継戦略が必要となる. これをRecovery strategy\cite{28}と呼ぶ. revovery strategyの基本モデルを図\ref{fig:Recovery}に示す. $N_{1}$でLocal optimum problemが発生する. 次に$N_{1}$は, 自身の位置情報をパケットに加えrecovery strategyを開始する. recovery strategyは, Local optimum problemが発生したノード($N_{1}$)の位置より宛先に近いノードにパケットが到達するまで繰り返される. $N_{2}$までパケットが到達した場合$N_{2}$は$N_{1}$よりも宛先に近いため, 元の中継を開始する. 
+  
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=130mm]{figures/basic-recovery.eps}
+	\caption{Recovery strategy}
+	\label{fig:Recovery}
+\end{figure}
+
+代表的なrecovery strategyとしてGreedy perimeter stateless routing(GPSR) \cite{6}の $perimeter forwarding$
+と呼ばれるrecovery strategyが提案されている. 
 
 \addcontentsline{toc}{chapter}{謝辞}
 \chapter*{謝辞}
