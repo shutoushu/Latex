@@ -131,9 +131,36 @@ S.~E. Carpenter and M.~L. Sichitiu, ``An obstacle model implementation for
   evaluating radio shadowing with ns-3,'' \emph{Proceedings of the 2015
   Workshop on Ns-3}, pp. 17--24, 2015.
 
+\bibitem{Geocast}
+S.~Allal and S.~Boudjit, ``Geocast routing protocols for vanets: Survey and
+  guidelines,'' \emph{2012 Sixth International Conference on Innovative Mobile
+  and Internet Services in Ubiquitous Computing}, pp. 323--328, 2012.
+
+\bibitem{LBM}
+Y.-B. Ko and N.~H. Vaidya, ``Geocasting in mobile ad hoc networks:
+  Location-based multicast algorithms,'' \emph{Proceedings WMCSA'99. Second
+  IEEE Workshop on Mobile Computing Systems and Applications}, pp. 101--110,
+  1999.
+
 \bibitem{28}
 S.~Boussoufa-Lahlah, F.~Semchedine, and L.~Bouallouche-Medjkoune, ``Geographic
   routing protocols for vehicular ad hoc networks (vanets): A survey,''
   \emph{Vehicular Communications}, vol.~11, pp. 20--31, 2018.
+
+\bibitem{29}
+K.~C. Lee, P.-C. Cheng, J.-T. Weng, L.-C. Tung, and M.~Gerla, ``Vclcr: A
+  practical geographic routing protocol in urban scenarios,'' \emph{UCLA
+  Computer Science Department, Tech. Rep. TR080009}, 2008.
+
+\bibitem{JBR}
+S.~Tsiachris, G.~Koltsidas, and F.-N. Pavlidou, ``Junction-based geographic
+  routing algorithm for vehicular ad hoc networks,'' \emph{Wireless personal
+  communications}, vol.~71, no.~2, pp. 955--973, 2013.
+
+\bibitem{27}
+P.~A. Lopez, M.~Behrisch, L.~Bieker-Walz, J.~Erdmann, Y.-P. Fl{\"o}tter{\"o}d,
+  R.~Hilbrich, L.~L{\"u}cken, J.~Rummel, P.~Wagner, and E.~Wie{\ss}ner,
+  ``Microscopic traffic simulation using sumo,'' \emph{2019 IEEE Intelligent
+  Transportation Systems Conference (ITSC)}, pp. 2575--2582, 2018.
 
 \end{thebibliography}
