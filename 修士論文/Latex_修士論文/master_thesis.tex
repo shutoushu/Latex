@@ -8,8 +8,13 @@
 \usepackage{here}
 \usepackage{url}
 \usepackage{bm}
-\usepackage{amsmath}
 \usepackage{comment}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
 
 % A4 : width 21cm, height 29.7cm
 \usepackage[a4paper,textheight=21.7cm,top=3cm,left=2cm,right=2cm,headheight=15pt]{geometry}
@@ -70,7 +75,7 @@ test
 車車間通信は車両と車両との間で無線通信を行い, 情報のやり取りを行うものである. 車車間通信を図2.1に示す. 車車間通信では, 端末同士（車両同士）で自律的にネットワークを構築し, 宛先に直接通信できない場合には間の車両が中継車両となり, マルチホップ通信を行う. 車車間通信のメリットは固定のインフラを必要とせず車両間のみで通信が可能になり, インフラが存在しない地点で通信が可能になることである. 
 \section{路車間通信}
 路車間通信は, 道路に設置された路側機(RSU:Road Side Unit)と車両で無線通信を行い　
-様々な情報の交換を行うものである. 路車間通信を図2.1に示す.  路車間通信の代表的なサービスとしてVICS(Vehicle Information and Communication System)やETC(Electronic Toll Collection)がある. VICSは, 各道路に設置されたビーコンから道路交通情報を発信し, 車載のカーナビや高速道路の電子掲示板に高速道路の渋滞の情報, 区間を通過するための所要時間, 駐車場情報などを表示する「ナビゲーションシステム高度化」を目指したサービスである. ETCは高速道路の入り口に設置されている通信機と車載の通信機で無線通信を行い, 料金所に止まることなく, 自動でスムーズに料金の支払いができるシステムである. 料金所での一時停止が渋滞の原因の一つであったが, ETCの導入で渋滞を解消することができた. 
+様々な情報の交換を行うものである. 路車間通信を図\ref{fig:VANET}に示す.  路車間通信の代表的なサービスとしてVICS(Vehicle Information and Communication System)やETC(Electronic Toll Collection)がある. VICSは, 各道路に設置されたビーコンから道路交通情報を発信し, 車載のカーナビや高速道路の電子掲示板に高速道路の渋滞の情報, 区間を通過するための所要時間, 駐車場情報などを表示する「ナビゲーションシステム高度化」を目指したサービスである. ETCは高速道路の入り口に設置されている通信機と車載の通信機で無線通信を行い, 料金所に止まることなく, 自動でスムーズに料金の支払いができるシステムである. 料金所での一時停止が渋滞の原因の一つであったが, ETCの導入で渋滞を解消することができた. 
 
 
 
@@ -78,8 +83,9 @@ test
 %図の入れ方
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=15cm]{figures/2_2.png}
+\includegraphics[width=15cm]{figures/VANET.eps}
 \caption{車車間通信と路車間通信}
+\label{fig:VANET}
 \end{figure}
 
 
@@ -146,11 +152,68 @@ $N_{s}$が送信ノード, $N_{d}$が宛先ノードである. 送信ノード$N
 そこで, 本研究では, 既存opportunistic routingであるLSGOをネットワークシミュレータNS-3\cite{19}のシャドウイングモデルであるObstacle Shadowing Model\cite{20}を用いて評価し, 建物によるシャドウイングが起こる場合と起こらない場合の通信性能を検証し, 問題点を明らかにする.
 
 
-
-
-
 \subsection{Geocast routing}
-Topology-base routing\cite {3,4,5} は, 
+これまでの節では, ある特定ノードにデータを届けるUnicast routing protocolを紹介した.
+本節では, ある特定領域にいる全ノードにデータを届けるGeocast routing protocol\cite{Geocast}について紹介する.
+特定領域にいる多くのノードに情報を届けるために, 最も単純な方式がフラッディング手法である.
+しかし, フラッディング手法はパケットを受信したすべてのノードがブロードキャストをするため, ブロードキャストストームの発生する確率が高まる.
+そこで, 宛先方向へのフラッディングを行う指向性フラッディングがある. 指向性フラッディングの代表例として, Location-Based-Multicast (LBM) \cite{LBM}が提案されている.
+LBMでは, 宛先領域(Geocast Region)と転送エリアを表す(Forwarding Region)を用いるLBM scheme1, データパケットを受け取ったノードが, 自身と宛先領域の中心座標との距離を算出し, 自身が送信ノードより宛先領域の中心座標に近い倍のみデータパケットを転送するLBM scheme2の２種類の転送手法が手案されている.
+scheme1, scheme2の動作例を図\ref{fig:scheme1}, \ref{fig:scheme2}に示す.
+
+\par
+\vspace{5mm}
+\noindent
+\textbf{LBM Scheme1}
+\vspace{5mm}
+
+Scheme1の手順を以下の(1)～(4)に示す.
+
+
+\textbf{手順 1} ソースノード$S$は, 矩形領域$OPQB$をGeocast regionとして指定する.
+
+\textbf{手順 2} $S$は, 自身とGeocast regionを含む最小の矩形$ASCB$をForwarding Regionとして指定する. その後, Forwarding Regionの情報を含めたデータパケットをフラッディングする.
+
+\textbf{手順 3} データパケットを受信したノードは，自身がForwarding Region内にいる場合，自身とGeocast Regionを含むForwarding Regionを再設定しフラッディングを行う．自身がForwarding Region外にいる場合，データパケットを破棄する.
+
+\textbf{手順 4} Geocast Regionに到達するまで手順3を繰り返す. 
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=100mm]{figures/Scheme1.eps}
+	\caption{LBM:scheme1}
+	\label{fig:scheme1}
+\end{figure}
+
+\par
+\vspace{5mm}
+\noindent
+\textbf{LBM Scheme1}
+\vspace{5mm}
+
+Scheme2の手順を以下の(1)～(3)に示す.
+
+
+\textbf{手順 1} ソースノード$S$は, Multicast Regionの中心座標と自身の位置情報を含めたデータパケットをフラッディングする.
+
+\textbf{手順 2} データパケットを受信した各ノードは, 1ホップ前のノード(ノード$X$の場合のノード$S$)の位置情報と, 自身の位置情報を確認し, それぞれのMulticast regionの中心座標までの距離($Dist$)を算出する. 1ホップ前のノードより自身がMulticast regionの中心座標に近い場合, データパケットに自身の位置情報を再設定しフラッディングを行う.
+例えば, 図の場合$Dist_x$ \verb|<| $Dist_x$の関係が成り立つため, ノード$X$はノード$S$からパケットを受信した場合, フラッディングを行う. しかし, $Dist_x$　\verb|<|　$Dist_y$の関係が成り立つ, ノード$X$からのパケットをノード$Y$が受信した場合, データパケットを破棄する.
+
+\textbf{手順 3} Geocast Regionに到達するまで手順2を繰り返す.
+
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=100mm]{figures/Scheme2.eps}
+	\caption{LBM:scheme2}
+	\label{fig:scheme2}
+\end{figure}
+
+本研究では, 提案するOpportunistic routingを拡張し, Geocast routingにおいても有効であることを示す.
+
+
 
 \section{Local optimum problem}
 \label{local_optimum_problem}
@@ -174,8 +237,333 @@ Topology-base routing\cite {3,4,5} は,
 	\label{fig:Recovery}
 \end{figure}
 
-代表的なrecovery strategyとしてGreedy perimeter stateless routing(GPSR) \cite{6}の $perimeter forwarding$
-と呼ばれるrecovery strategyが提案されている. 
+代表的なrecovery strategyとしてGreedy perimeter stateless routing(GPSR) \cite{6}の perimeter forwarding
+と呼ばれるrecovery strategyが提案されている. perimeter forwardingの例を図\ref{fig:Perimeter}に示す. perimeter fowardingではグラフ理論で古くからよく知られている右手の法則を使用する. この図では送信ノード$S$が宛先ノード$D$に最も近いためLocal optimum problemが発生している. この場合, 送信ノードは自分と宛先ノードを結んだ線から反時計回りに隣接ノードを探索し, 最初に発見したノードに対してパケットを送信する. perimeter forwardingの2ホップ目以降では, 1ホップ前のノード(ノードxの場合はノードS)と自ノードを直線で結び, この直線から半時計回りに探索したノードに対してパケットを送信する. これを繰り返すことにより迂回ルートを構築することが可能になる. 
+しかし, 右手の法則を使用する場合, すべてのエッジが交差していない必要がある. 例えば図\ref{fig:cross_link}のようなエッジ(リンク) の接続状態の場合(x → u → z → w → u → x)のようにループが発生する可能性がある. GPSRではループの原因となるクロスリンクを削除する方式が提案されているが, この方式は障害物が多く存在する都市環境ではネットワークの切断につながる可能性がある. したがって, perimeter fowardingはVANETには適していない.
+
+
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=130mm]{figures/Perimeter.eps}
+	\caption{Perimeter fowarding}
+	\label{fig:Perimeter}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=100mm]{figures/cross-link.eps}
+	\caption{ループが発生する例}
+	\label{fig:cross_link}
+\end{figure}
+
+GPSRの問題点に対処するため, Greedy Perimeter Coordinator Routing(GPCR)\cite{7}が都市環境用に提案された. GPCRのrecovery strategyにおける主なアイデアは, Coordinatorと呼ばれる交差点に位置するノードを中継ノードとして最も優先して選択することである. GPCRのrecovery strategyの例を図\ref{fig:GPCR}に示す.
+GPCRのrecovery strategyは, 右手の法則を使用した道路の選択と同一道路内の制限されたgreedy fowardingの２つの手順を繰り返し行う. 図ではLocal optimum problemが発生したノード$S$が転送する道路を選択し, 次の交差点を目指しgreedy fowardingを行う. パケットが交差点ノード$C_{1}$に到達すると, $C_{1}$は右手の法則を使用し, 転送する道路を選択する. この手順を繰り返す. GPCRでは, 各交差点にノードが存在する場合, GPSRのようにクロスリンクによるループは発生しない. しかし, 交差点ノードが存在しない場合ループが発生するという問題が生じる. この問題を解決するため, VANET cross Link Corrected Routing (VCLCR) \cite{29} が提案されている. VCLCRでは, 転送中の道路IDをパケットに格納することで,　ルーチングループを検知し, クロスリンクを削除する. しかし, この方式ではパケットに格納すべきデータ量が増加することと, クロスリンクを削除するためのパケット数が増加してしまう問題がある. 
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=130mm]{figures/GPCR.eps}
+	\caption{GPCR}
+	\label{fig:GPCR}
+\end{figure}
+
+Junction-Based Routing (JBR) \cite{JBR}のrecovery strategyでは, GPSRやGPCRのような右手の法則ではなく, 新たに最小角度法と呼ばれる手法を用いて中継ノードを選択する. JBRでは, 図\ref{fig:JBR}に示すように, 交差点ノードまでは従来の方式と同様にgreedy fowarding, 交差点ノードまでパケットが到達した場合, 交差点ノードは最小角度法に従って中継ノードを選択する. 図の例ではノードBが選択されている. 最小角度法の利点は, 右手の法則のようなループが起きないことである. 
+しかし, JBRやGPCRのように交差点中心のrecovery strategyでは, 交差点ノードが存在しない場合アルゴリズムが機能しないという問題が発生する. また, JBRやGPCRなどの交差点中心のrecovery strategyを提案している既存研究の多くは, 建物によって電波が完全に遮断される仮定を基に,　アルゴリズムが設計されている. これは現実的な仮定ではない. 
+本研究ではこれらのrecovery strategyの問題に対処する新しいアルゴリズムを提案する. 
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=140mm]{figures/JBR.eps}
+	\caption{JBR}
+	\label{fig:JBR}
+\end{figure}
+
+
+
+\chapter{LSGO}
+\label{LSGO}
+\section{概要}
+LSGOはVANET用に設計されたopportunistic routingでは代表的なものの一つである.
+LSGOでは, 各ノードは自ノードのIDと現在の位置情報で交際されるHelloパケットを定期的にブロードキャストする. これにより各ノードは隣接ノードの情報を得ることができる.
+送信ノード(ソースノードまたは任意の$i$ホップ目の中継ノード)は, Helloパケットで取得した情報に基づいて, 中継候補ノードセット:RCSの選定とそれらに優先順位を割り当て, データパケットをブロードキャストする. 各送信ノードは次節以降で説明する, リンク品質と宛先までの距離の2つのメトリックに従って, RCSの優先順位を決定する. データパケットを受信した各ノードは, 自身のIDが含まれているかどうかを確認し, 含まれていない場合はパケットを破棄する. 含まれていた場合, 優先順位をチェックし, 次節で説明する優先度スケジューリングアルゴリズムに従ってパケットを再ブロードキャストするか否かを決定する.
+
+\section{リンク品質の推定}
+LSGOでは, 各ノードがHelloパケットを定期的にブロードキャストし, それを用いてリンク品質ETXを推定する. Helloパケットは, 自ノードのID, X座標, Y座標で構成されている. ETXを算出するために, 各ノードは近隣ノードから最初にHelloパケットを受信した時間$t_{0}$を記録する. そして, 現在時刻を$t$, ウィンドウサイズを$w$(second), Helloパケットの送信間隔を$\tau$とすると, 予想伝送確率$r(t)$はウィンドウサイズ$w$で場合分けされ, 式(\ref{trans-prediction})で算出される.
+
+\begin{equation}
+	\label{trans-prediction}
+	r(t) =\begin{cases}count(t, t_{0}), & 0 < t - t_{0} < 1,  \\ \frac{count(t,t_{0})}{(t-t_{0}) / \tau}, & 1 \leq t - t_{0} \leq w\\
+		\frac{count(t - w,t)}{w / \tau}, &  t - t_{0} \geq w\\
+	\end{cases}
+\end{equation}
+
+
+ウィンドウサイズ$w$は, $r(t)$を算出する際に, 現在時刻$t$より以前に取得したHelloパケットの有効期間である. 例えば, 現在時刻$t$=10(s), ウィンドウサイズ$w$=5(s)とすると, 時刻5(s)より古いHelloパケットの情報は$r(t)$を算出する際には用いない. $(t,t_{0})$ / $\tau$は, ウィンドウサイズの間に受信されるべきHelloパケット数であり, $count(t,t_{0})$は$t$ ～ $t_{0}$の期間中に実際に受信されたHello パケットの数である. \par
+各近隣ノードとのリンクの非対称性は考慮せず, 一方向の予想伝送確率$r(t)$のみを使用してETXを計算する. 一方向伝送確率が$r(t)$であると仮定すると, リンクETXは式(\ref{equ-intersection})で算出される.
+
+\begin{equation}
+	\label{equ-intersection}
+	ETX = \frac{1}{  {r(t)}^{2}   } 
+\end{equation}
+
+\section{優先度スケジューリングアルゴリズム}
+
+LSGOでは, タイマーベースの優先度スケジューリングアルゴリズムを使用する. このアルゴリズムでは, 最も優先度が高いノードが最初にパケットを送信する. ほかの候補ノードは, 優先順位の高いノードからのパケットを受信すると, 自身のパケットを破棄する. タイマーが期限切れになり, 自身より優先度の高いノードからのパケットを受信していない場合, 送信を開始する. LSGOは以下の式(\ref{pri})によって, ノード$i$の優先度が算出される.
+
+\begin{equation}
+	\label{pri}
+	\frac{D_{sd} - D_{id}}{ETX_{i}^{2}} ,   D_{id} < D_{sd}
+\end{equation}
+
+$D_{sd}$は送信ノードから宛先ノードまでの距離, $D_{id}$は中継候補ノード$i$から宛先ノードまでの距離である.  $D_{id}$ < $D_{sd}$の条件を満たさない場合は, 優先度の計算を行わずにRCSから除外する.
+式(\ref{pri})で算出された値が大きいほどノード$i$の優先順位が高くなる. 
+
+\section{RCS選択アルゴリズム}
+Opportunistic routingにおいてRCSに含まれるノード数が多い場合, バックアップリンクの数が多くなるためパケット到達率は向上するが, RCSに含まれるノード同士の協調(再ブロードキャストキャンセル)がされない確率が高まるというトレードオフが存在する.  
+このためLSGOでは, 信頼性を確保しながら, 送信回数を減らすためにRCSに含まれるノード数を最適化するアルゴリズムが提案されている.  
+式(\ref{pri})を用いて各隣接ノードの優先順位を$p$ = 1,2..$N$(1が最も優先順位が高い)とすると, $N$は次の条件を満たす必要があり, RCSに含まれるノードはは1～$N$に制限される. 
+
+\begin{equation}
+	\label{Min-Probability}
+	1 - \prod_{p=1}^N (1 - r_{p}(t))\geq R
+\end{equation}
+
+式(\ref{Min-Probability})における$r_{p}(t)$ (1$ \leqq $p$ \leqq $N)は, 送信ノードが保持する隣接ノード(優先順位$p$)に対する予想伝送確率である. 
+式(\ref{Min-Probability})の左辺は送信ノードからのパケットを候補ノード1～$N$のいずれかのノードが受信すると予想される確率であり, 右辺$R$はその確率の閾値である. $R$が大きいほど, RCSに含まれるノード数が増加し, 小さくなるほどRCSに含まれるノード数が減少する. 車両密度が小さい場合や送信ノードと各隣接ノード間の予想伝送確率が低い場合, 式(\ref{Min-Probability})満たすことができない場合がある. その場合, $D{id}$ \verb|<| $D_{sd}$の条件を満たすすべての隣接ノードがRCSとして選択される. また, 送信ノードと各隣接ノードとの予想伝送確率が高い場合, 候補ノード数$N$は小さくなるため, 信頼性を確保しながら, 最低限の候補ノード数を選択することができる. 
+
+
+\section{シャドウイングとRCS数の影響}
+本節では, シャドウイングによる電波減衰が起きやすい都市環境において, RCSに含まれるノード数がどのように通信性能に影響を与えるのか, LSGOのRCS選択アルゴリズムは有効なのかを調査する.
+また, シャドウイングによる電波減衰が起こる場合と起こらない場合とでのLSGOの通信性能に与える影響を調査する.
+
+\subsection{シミュレーション設定}
+シミュレーションパラメータを表\ref{tab:parameter}, シミュレーションシナリオを図\ref{fig:Scnario}に示す. シミュレーションシナリオは交通流シミュレータのSUMO\cite{27}を使用して作成した. シミュレーション開始時に, ランダムな送信ノードと宛先ノードがそれぞれ10台ずつ割り当てられ, 通信を開始する. 各交差点には信号機を配置し, 図の灰色の領域に建物を配置した. 
+NS-3の電波伝搬モデルとしてシャドウイングモデルであるObstacle shadowing model\cite{20}を使用した. シャドウイングによる伝搬損失$L_{s,o}$は各壁による損失と建物の貫通距離(m)に基づいて式(\ref{shadowing})で算出される.
+
+\begin{equation}
+	\label{shadowing}
+	L_{s,o} = \alpha n  + \beta d_0
+\end{equation}
+
+シャドウイングモデルには２つのパラメータが存在する. $\alpha$は壁あたりの減衰(db), $\beta$は建物の貫通距離あたりの減衰(db)である. また, $n$は貫通した建物の壁の数であり, $d_{o}$は建物の貫通距離(m)である.
+本シミュレーションでは, $\alpha$= 10 dB and $\beta$= 0.4 dB で評価を行った. 
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=70mm]{figures/Scenario.eps}
+	\caption{シミュレーションシナリオ}
+	\label{fig:Scenario}
+\end{figure}
+
+\begin{table}[!ht]
+	\begin{center}
+		\caption{シミュレーションパラメータ}
+		\label{tab:parameter}
+		\begin{tabular}{|l|l|lll}
+			\cline{1-2}
+			Network Simulator    & NS-3 (v3.30) &  &  &  \\ \cline{1-2}
+			Traffic Simulator    & NS-3 (v3.30) &  &  &  \\ \cline{1-2}
+			Simulation area    & 1000m × 1000m   &  &  &  \\ \cline{1-2}
+			Mobility model     & Random mobility &  &  &  \\ \cline{1-2}
+			Transmission range & 250m            &  &  &  \\ \cline{1-2}
+			Number of vehicles & 200, 300, 400      &  &  &  \\ \cline{1-2}
+			Radio propagation model    & obstacle shadowing model\cite{20}&  &  &  \\ \cline{1-2}
+			MAC Layer     & 802.11p &  &  &  \\ \cline{1-2}
+			Packet Size & 512 byte       &  &  &  \\ \cline{1-2}
+			Simulation Time & 30 s      &  &  &  \\ \cline{1-2}
+			hello interval & 1 s      &  &  &  \\ \cline{1-2}
+			Window size w  & 10 s      &  &  &  \\ \cline{1-2}
+			%Number of relay candidate nodes  & 5       &  &  \\ \cline{1-2}
+			shadowing parameter $\alpha$  & 10db      &  &  &  \\ \cline{1-2}
+			shadowing parameter $\beta$    & 0.4db &  &  \\ \cline{1-2}
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{評価項目}
+本シミュレーションでは, LSGOの通信性能を評価するためパケット到達率(PDR), エンドツーエンド遅延(Delay), オーバーヘッド(Overhead)の3つの評価項目で評価した. PDR, Delay, Overheadの算出式をそれぞれ式\ref{PDR}, \ref{delay}, \ref{overhead}に示す.
+
+\begin{equation}
+	\label{PDR}
+	PDR = \frac{D_{recv}}{  S_{sent}  } \times 100
+\end{equation}
+
+ここで, PDRはソースノード(データパケットを一番初めに生成したノード)から宛先ノードに送信されるパケットの到達率を表す. $S_{sent}$はソースノードが送信した合計パケット数を表し, $D_{recv}$は宛先ノードが受信した合計パケット数を表す.
+
+\begin{equation}
+	\label{delay}
+	Delay = \frac{\sum_{i=1}^{N}ED_i}{N}
+\end{equation}
+
+ここでエンドツーエンド遅延(秒)は, ソースノードがパケットを送信してから宛先ノードに到達するまでにかかる平均時間を表す. $ED_i$は, 宛先ノードが正常に受信したパケット$i$(1$ \leqq $i$ \leqq $N)が, ソースノードの送信から宛先ノードに到達するまでにかかる時間を表す. 
+$N$は宛先ノードが正常に受信したパケット数を表す.
+
+\begin{equation}
+	\label{overhead}
+	Overhead = \frac{N_{sent}}{  D_{recv}  }
+\end{equation}
+
+ここでオーバーヘッドは, １データパケットを宛先ノードに届けるためにどれだけのパケット数を費やしたかを表す. $N_{sent}$はネットワーク全体における各ノードが送信した合計パケット数を表す.
+
+\subsection{RCS数の影響}
+本シミュレーションでは, RCSに含まれるノード数が通信性能にどのように影響するのかを評価した.
+シャドウイングパラメータ$\aleph$ = 10, $\beta$ = 0.4, ノード数は400に設定した.
+図\ref{fig:RCS-PDR}, \ref{fig:RCS-delay}, \ref{fig:RCS-overhead}は, RCS数を変化させたときのパケット到達率, エンドツーエンド遅延, オーバーヘッドを示している. RCS\_LSGOは, RSC数をLSGOのアルゴリズムに従って決定した場合の取得データを示している. 今回のシミュレーションでは, 式\ref{Min-Probability}の閾値$R$は, RCS数が最も多くなる1.0に設定した. RCS\_1～5はRCS数を1～5個に設定した時の取得データを示している. また, RCS\_1～5の時のRCS数は最大値であり, 各送信ノードより宛先ノードに近いノードが設定したRCS数より少ない場合, 隣接するすべてのノードがRCSに含まれる.
+\par
+\vspace{5mm}
+\noindent
+\textbf{パケット到達率(PDR)}
+\vspace{5mm}
+
+
+図が示す通り, RCS数が増加するほどパケット到達率が向上している. これはRCS数が多いほど, RCSに含まれるノードのいずれかにパケットが到達する確率が上昇するからである. また, 本シミュレーションシナリオとobstacle shadowing modelを用いて評価した場合, LSGOのRCS選択アルゴリズムの性能が低いことがわかる. LSGOのRCS選択アルゴリズムは予想伝送確率を使用して設計されており, 予想伝送確率はHelloパケットの受信履歴から計算される. しかし, 実際のHelloパケットはデータパケットよりもデータサイズが小さいため, データパケットより高確率で受信される. これがこのアルゴリズムの性能低下の原因だと推測される.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=110mm]{figures/RCS_PDR.eps}
+	\caption{RCS数の変化にともなうPDR}
+	\label{fig:RCS-PDR}
+\end{figure}
+
+\par
+\vspace{5mm}
+\noindent
+\textbf{エンドツーエンド遅延}
+\vspace{5mm}
+
+図が示す通り, RCS数が増加するほど, 遅延は増加している. これは2通りの理由が推測される. 1つ目は, RCS数が少ない場合, ソースノードと宛先ノードの距離が近い場合のみ宛先ノードが正常にパケットを受信したからである. 図\ref{fig:RCS-hop}に, 送信ノードから宛先ノードまで正常に到達したパケットの平均ホップ数を示す. RCS数が少ない場合, ホップ数が減少していることがわかる. これはRCS数が少ない時には, 送信ノードと宛先ノードの距離が近い場合に限り, 正常にパケットが到達したことを示している.
+2つ目は, RCS数が多いほど, 優先順位が低い中継候補ノードのみパケットを受信した場合, 優先順位の低いノードほど待ち時間(中継タイマー)が長いからである.
+
+
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=110mm]{figures/RCS_Delay.eps}
+	\caption{RCS数の変化にともなうエンドツーエンド遅延}
+	\label{fig:RCS-delay}
+\end{figure}
+
+\par
+\vspace{5mm}
+\noindent
+\textbf{オーバーヘッド}
+\vspace{5mm}
+
+図が示す通り, RCS数が増加するほど, オーバーヘッドが減少している. これはRCSが増加するほど, ネットワーク全体における各ノードが送信した合計パケット数は増加しているが, 宛先ノードが正常に受信したパケット数も増加したためである. また, ホップ数が著しいRCS数1を除き, RCS数が増加するほどオーバーヘッドが減少しているが, 5から6にかけて少し増加している. これは, 5から6にかけて宛先が正常に受信したパケット数に差がないのに対して, ネットワーク全体における各ノードが送信した合計パケット数が増加しているからである. したがって, 本シミュレーションではRCS数5の場合が最も効率的である. 
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=110mm]{figures/RCS_Overhead.eps}
+	\caption{RCS数の変化にともなうオーバーヘッド}
+	\label{fig:RCS-overhead}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=110mm]{figures/RCS_Hop.eps}
+	\caption{RCS数の変化にともなうホップ数}
+	\label{fig:RCS-hop}
+\end{figure}
+
+\subsection{シャドウイングの影響}
+本シミュレーションでは, 建物のシャドウイングによる電波の減衰が起こる場合のLSGOの通信性能に与える影響を評価した.
+またRCS数は5に設定した.
+
+\par
+\vspace{5mm}
+\noindent
+\textbf{パケット到達率}
+\vspace{5mm}
+
+図\ref{fig:LSGO-PDR}は, ネットワークシミュレーションでシャドウイングの影響を考慮した場合としない場合とでの, パケット到達率を示している.
+シミュレーションでシャドウイングを考慮した場合, 全てのノード数においてパケット到達率が減少している. これは, シャドウイングによる電波減衰が原因だと推測される.
+
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=110mm]{figures/LSGO_PDR.eps}
+	\caption{パケット到達率 シャドウイングの有無}
+	\label{fig:LSGO-PDR}
+\end{figure}
+
+\par
+\vspace{5mm}
+\noindent
+\textbf{エンドツーエンド遅延}
+\vspace{5mm}
+
+図\ref{fig:LSGO-delay}は, はネットワークシミュレータでシャドウイングの影響を考慮する場合としない場合とでのエンドツーエンド遅延(秒)を
+示している.　シミュレーションでシャドウイングを考慮した場合, 全てのノード数においてエンドツーエンド遅延が増加している.　これはシャドウイングによる電波減衰が起こり, 建物を通過するパケットが届きにくくなることで,  ソースノードと宛先ノードを直線的に結ぶような経路が形成することが難しくなったことが原因だと考えられる.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=110mm]{figures/LSGO_delay.eps}
+	\caption{エンドツーエンド遅延 シャドウイングの有無}
+	\label{fig:LSGO-delay}
+\end{figure}
+
+
+\par
+\vspace{5mm}
+\noindent
+\textbf{オーバーヘッド}
+\vspace{5mm}
+
+図\ref{fig:LSGO-overhead}は, ネットワークシミュレータでシャドウイングの影響を考慮した場合としない場合とでのオーバーヘッドを示している.
+シミュレーションでシャドウイングを考慮した場合, すべてのノード数においてオーバーヘッドが増加している. これは2通りの理由が推測される.
+1つ目は, シャドウイングによる電波減衰が起こり, 建物を通過するパケットが届きにくくなることで,  ソースノードと宛先ノードを直線的に結ぶような経路が形成することが難しくなったため, ホップ数が増加したと推測される. 
+2つ目は, opportunistic routingでの送信ノードから指定されたRCSに指定されたノード同士が自分より優先度の高いノードからのパケットを建物による電波減衰によって, 受け取れない確率が増加し, 再転送がキャンセルされていないことが原因だと推測される.
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=110mm]{figures/LSGO_overhead.eps}
+	\caption{オーバーヘッド シャドウイングの有無}
+	\label{fig:LSGO-overhead}
+\end{figure}
+
+
+\subsection{LSGOの問題点}
+本節では, LSGOの中継戦略の問題点について考察する. LSGOでは, 中継候補ノードの優先順位をあて先ノードまでの近さとリンク品質を基に決定する. 問題のあるシチュエーションの一例を図\ref{fig:LSGO-problem}に示す. 
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=160mm]{figures/LSGO_problem.eps}
+	\caption{中継戦略の問題点}
+	\label{fig:LSGO-problem}
+\end{figure}
+
+図(a)のように送信ノード$S$が, ノード$W$を最も優先度の高い中継ノードとして選択した場合を考える. この場合, ノード$W$に続く中継ノード(ノード$W$より宛先に近いノードを選択)は, シャドウイングによりリンク品質が良くないノード$X$と$Y$のみとなる. この問題をLocal shadowing problemと呼ぶ. また, シャドウイングの強度が強い場合, $X$と$Y$のリンクが完全に遮断されている場合が考えられる. この場合, \ref{local_optimum_problem}節で紹介したLocal optimum problemが発生する. これらのことから, LSGOの中継戦略は, Local shadowing problemやLocal optimum problemに陥る可能性が高いことがわかる. この問題は, 図(b)に示すように, ノード$V$のような交差点ノードを中継ノードとして選択することで回避することができる. 
+
+
+
+
+
+\chapter{車両位置とリンク状態を考慮した地理的opportunistic routing}
+\section{概要}
+本研究では, 以下の3つを提案する. \par
+\textbf{1. シャドウイングを考慮したopportunistic routing(SIGO)} \par
+\textbf{2. シャドウイングを考慮したrecovery strategy(ORS)} \par
+\textbf{3. 1のoppotrunistic routingを基に拡張したgeocast routing} \par
+
+1ではLSGOの問題点を解決するopportunistic routingを提案する. 性能評価では, LSGOとの比較を行った. 2では, 既存recovery strategyの問題を解決するopportunistic recovery strategy提案する. 提案するrecovery strategyと比較手法としてJBRをSIGOのrecovery strategyとして加え比較を行った.
+3では, SIGOとLSGOをそれぞれgeocast routingに拡張し, それぞれの比較を行った.
+
+\subsection{SIGO: Shadowing-based Intersection Geographic Opportunistic Routing}
+
+本研究では, shadowing-based intersection geographic opportunistic routing(SIGO)という, シャドウイングを考慮したopportunistic routingを提案する. SIGOでは, 中継ノードの優先度を決定するメトリックとして, 宛先ノードまでの距離, リンク品質に加え, 交差点ノードを優先する指標である$IRI$(intersection relay index)を用いる. 最初の2つのメトリックは, \ref{LSGO}章で紹介したLSGOと同様の方法で算出する.
+
+\subsection{ORS: Opportunistic Recovery Strategy}
+
+\subsection{Geocast routingへの拡張}
+
+
+
+
+
 
 \addcontentsline{toc}{chapter}{謝辞}
 \chapter*{謝辞}
