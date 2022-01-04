@@ -289,6 +289,7 @@ LSGOでは, 各ノードは自ノードのIDと現在の位置情報で交際さ
 送信ノード(ソースノードまたは任意の$i$ホップ目の中継ノード)は, Helloパケットで取得した情報に基づいて, 中継候補ノードセット:RCSの選定とそれらに優先順位を割り当て, データパケットをブロードキャストする. 各送信ノードは次節以降で説明する, リンク品質と宛先までの距離の2つのメトリックに従って, RCSの優先順位を決定する. データパケットを受信した各ノードは, 自身のIDが含まれているかどうかを確認し, 含まれていない場合はパケットを破棄する. 含まれていた場合, 優先順位をチェックし, 次節で説明する優先度スケジューリングアルゴリズムに従ってパケットを再ブロードキャストするか否かを決定する.
 
 \section{リンク品質の推定}
+\label{link-quality}
 LSGOでは, 各ノードがHelloパケットを定期的にブロードキャストし, それを用いてリンク品質ETXを推定する. Helloパケットは, 自ノードのID, X座標, Y座標で構成されている. ETXを算出するために, 各ノードは近隣ノードから最初にHelloパケットを受信した時間$t_{0}$を記録する. そして, 現在時刻を$t$, ウィンドウサイズを$w$(second), Helloパケットの送信間隔を$\tau$とすると, 予想伝送確率$r(t)$はウィンドウサイズ$w$で場合分けされ, 式(\ref{trans-prediction})で算出される.
 
 \begin{equation}
@@ -334,6 +335,8 @@ Opportunistic routingにおいてRCSに含まれるノード数が多い場合, 
 
 
 \section{シャドウイングとRCS数の影響}
+\label{LSGO_evaluation}
+
 本節では, シャドウイングによる電波減衰が起きやすい都市環境において, RCSに含まれるノード数がどのように通信性能に影響を与えるのか, LSGOのRCS選択アルゴリズムは有効なのかを調査する.
 また, シャドウイングによる電波減衰が起こる場合と起こらない場合とでのLSGOの通信性能に与える影響を調査する.
 
@@ -363,7 +366,7 @@ NS-3の電波伝搬モデルとしてシャドウイングモデルであるObst
 		\begin{tabular}{|l|l|lll}
 			\cline{1-2}
 			Network Simulator    & NS-3 (v3.30) &  &  &  \\ \cline{1-2}
-			Traffic Simulator    & NS-3 (v3.30) &  &  &  \\ \cline{1-2}
+			Traffic Simulator    & SUMO &  &  &  \\ \cline{1-2}
 			Simulation area    & 1000m × 1000m   &  &  &  \\ \cline{1-2}
 			Mobility model     & Random mobility &  &  &  \\ \cline{1-2}
 			Transmission range & 250m            &  &  &  \\ \cline{1-2}
@@ -382,6 +385,7 @@ NS-3の電波伝搬モデルとしてシャドウイングモデルであるObst
 \end{table}
 
 \subsection{評価項目}
+\label{evaluation_item}
 本シミュレーションでは, LSGOの通信性能を評価するためパケット到達率(PDR), エンドツーエンド遅延(Delay), オーバーヘッド(Overhead)の3つの評価項目で評価した. PDR, Delay, Overheadの算出式をそれぞれ式\ref{PDR}, \ref{delay}, \ref{overhead}に示す.
 
 \begin{equation}
@@ -546,22 +550,360 @@ $N$は宛先ノードが正常に受信したパケット数を表す.
 \section{概要}
 本研究では, 以下の3つを提案する. \par
 \textbf{1. シャドウイングを考慮したopportunistic routing(SIGO)} \par
-\textbf{2. シャドウイングを考慮したrecovery strategy(ORS)} \par
+\textbf{2. シャドウイングを考慮したopportunistic recovery strategy(ORS)} \par
 \textbf{3. 1のoppotrunistic routingを基に拡張したgeocast routing} \par
 
 1ではLSGOの問題点を解決するopportunistic routingを提案する. 性能評価では, LSGOとの比較を行った. 2では, 既存recovery strategyの問題を解決するopportunistic recovery strategy提案する. 提案するrecovery strategyと比較手法としてJBRをSIGOのrecovery strategyとして加え比較を行った.
 3では, SIGOとLSGOをそれぞれgeocast routingに拡張し, それぞれの比較を行った.
 
-\subsection{SIGO: Shadowing-based Intersection Geographic Opportunistic Routing}
+\section{前提条件}
+SIGOでは, 以下のような仮定と定義をおいている. 
 
-本研究では, shadowing-based intersection geographic opportunistic routing(SIGO)という, シャドウイングを考慮したopportunistic routingを提案する. SIGOでは, 中継ノードの優先度を決定するメトリックとして, 宛先ノードまでの距離, リンク品質に加え, 交差点ノードを優先する指標である$IRI$(intersection relay index)を用いる. 最初の2つのメトリックは, \ref{LSGO}章で紹介したLSGOと同様の方法で算出する.
+\begin{itemize}
+	\item A \textit{road segment} : 2つの交差点を結ぶ道路の一部分. (交差点は含めない)
+	\item A \textit{ソースノード} : 2つの交差点を結ぶ道路の一部分. (交差点は含めない)
+	\item A \textit{送信ノード} : 2つの交差点を結ぶ道路の一部分. (交差点は含めない)
+	\item A \textit{LSN} : 2つの交差点を結ぶ道路の一部分. (交差点は含めない)
+	\item All nodes are equipped with GPS and have access to digital maps.
+	\item Each node can identify the road segments and the street intersections where its neighbor nodes exist since itperiodically receives hello packets from its neighbor nodes.
+	\item 宛先ノードの位置情報は, 何らかの位置情報サービスを利用することを想定する. 
+\end{itemize}
 
-\subsection{ORS: Opportunistic Recovery Strategy}
-
-\subsection{Geocast routingへの拡張}
 
 
 
+\section{SIGO: Shadowing-based Intersection Geographic Opportunistic Routing}
+\label{SIGO}
+
+本研究では, shadowing-based intersection geographic opportunistic routing(SIGO)という, シャドウイングを考慮したopportunistic routingを提案する. SIGOでは, 中継ノードの優先度を決定するメトリックとして, 宛先ノードまでの距離, リンク品質に加え, 交差点ノードを優先する指標である$IRI$(intersection relay index)を用いる. 最初の2つのメトリックは, \ref{LSGO}章で紹介したLSGOと同様の方法で算出する. SIGOでは, LSGOと同様に各ノードが定期的にHelloパケットをブロードキャストする. 送信ノードは宛先ノードにパケットを届けるために, Helloパケットで収集した情報に基づいて, RCSの選定とRCSに含まれるノードの優先度情報を含むデータパケットをブロードキャストする. RCSの優先度は後述するアルゴリズムに従って, 決定する. データパケットを受信した各ノードは, パケットに自身のIDが含まれているかどうかを確認し, 含まれていない場合はパケットを破棄する. 含まれている場合, ノードは自身の優先度をチェックし\ref{ORS_priority}節で説明する優先度スケジューリングアルゴリズムに従ってパケットを再ブロードキャストするか決定する.
+
+\subsection{パケットフォーマット}
+
+SIGOでは, 各ノードが定期的にHelloをブロードキャストして, 隣接ノードのリンク品質と位置を把握する. Helloパケットのフォーマットを図\ref{fig:hello_packet}に示す.
+
+\begin{itemize}
+	\item $ID$: Helloパケットを送信するノードの$ID$
+	\item $X$: Helloパケットを送信するノードの$x$座標.
+	\item $Y$: Helloパケットを送信するノードの$y$座標.
+\end{itemize}
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=70mm]{figures/hello_packet_format.eps}
+	\caption{Helloパケットフォーマット}
+	\label{fig:hello_packet}
+\end{figure}
+
+データパケットのフォーマットを図\ref{fig:SIGO_packet}に示す. SIGOでは制御パケットを使用しないため, 各中継候補ノードに割り当てられた優先度情報がデータパケットに含まれる.
+
+\begin{itemize}
+	\item $SourceId$: ソースノードのID.
+	\item $DstId$: 宛先ノードのID.
+	\item $Dst_x Pos$: 宛先ノードの$x$座標.
+	\item $Dst_y Pos$: 宛先ノードの$y$座標.
+	\item $ID_i$: 中継候補ノードの優先度$i$. $i$ = 1, 2, 3, ...(数字が低いほど優先順位が高い) 
+	\item $Data$: ペイロード部.
+\end{itemize}
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=70mm]{figures/SIGO_packet_format.eps}
+	\caption{SIGOデータパケットフォーマット}
+	\label{fig:SIGO_packet}
+\end{figure}
+
+
+\subsection{Intersection Relay Index (IRI)}
+SIGOでは, 各送信ノードは以下の2つの条件を満たした場合$IRI$を算出する.
+
+\begin{itemize}
+	\item 送信ノードよりも宛先ノードに近い交差点ノードが存在する.
+	\item 送信ノードが存在するroad segmentに隣接する交差点に交差点ノードが存在する.
+\end{itemize}
+
+$IRI$は以下の手順で算出する. \par
+\textbf{手順1: 最も宛先ノードに近いroad segment(closest road segment)の選定.}
+送信ノードは, 自分より宛先ノードに近い隣接ノードが存在するroad segmentの中で, 宛先ノードに最も近いroad segmentを1つ選択する. 図\ref{fig:closest_road_segment}に示すように, 最も宛先ノードに近いroad segmentの算出には, 各road segmentの中心座標を用いる. 
+
+\textbf{手順2: closest road segmentへの予想伝送確率の算出.} 送信ノードはclosest road segmentに位置するノードの中で, 少なくとも1つのノードに到達する予想伝送確率$R_p$を式\ref{Rp}で算出する.
+
+\begin{equation}
+	\label{Rp}
+	R_p = 1 - \prod_{k=1}^N (1 - r_{k}(t))
+\end{equation}
+
+ここで, $r_k(t)$は, closest road segmentに存在するノード$k$ (1 $\leq$  $k$ $\leq$ $N$)の予想伝送確率である. 予想伝送確率は, \ref{link-quality}と同様の方法で算出する. $N$はclosest road segmentに存在するノード数を表す. 
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=120mm]{figures/closest_road_segment.eps}
+	\caption{Closest road segment}
+	\label{fig:closest_road_segment}
+\end{figure}
+
+\textbf{手順3: $IRI$の算出.} 手順2で算出した$R_p$を用いて, 隣接交差点ノード$i$の$IRI_i$を式\ref{IRI}で算出する.
+
+\begin{equation}
+	\label{IRI}
+	IRI_i =  \alpha\frac{\theta_i}{R_p}, \theta_i \geq 45
+\end{equation}
+
+ここで, $\theta_i$は図\ref{fig:angle}に示すように, 送信ノードと宛先ノードを結ぶ直線と, 送信ノードと交差点ノード$i$を結ぶ直線のなす角度である. $\theta_i$が大きくなるほど, $R_p$が小さくなるほど, $IRI_i$は大きくなる. 
+$\alpha$ ($\alpha$ \verb|>| 0) は, $IRI_i$の重み付け係数である. $IRI_i$が大きくなるほど, 送信ノードは高い確率で交差点ノード$i$をRCSに含み, 高い優先度を与える確率が増加する. 提案方式では$R_p$が小さい場合, 交差点ノードが優先される確率が高まる. これは, 交差点ノードを介してclosest road segmentに存在するノード群にパケットを届けることが目的である. また, $\theta_i$ ($\theta_i$ \verb|<=| 90 )が大きい場合,　送信ノードは高い確率で交差点ノード$i$をRCSに含み, 高い優先度を与える確率が増加する.
+これは, $\theta_i$が大きいとき, 宛先までの距離とリンク品質で優先度を算出すると図\ref{fig:aim_SIGO}のような優先順位になる確率が高まる. この場合, Local optimum problemになる確率が増加する. したがって, これを防ぐために提案方式では$\theta_i$が大きくなるほど, 交差点ノードの優先度が増加するように設計した.
+また, $\theta_i$が小さい場合交差点ノードが優先されると, ホップ数が増加し通信制のが低下する問題が発生する. 
+そのため, 提案方式では$\theta_i$が45より大きい場合のみ, $IRI_i$の優先度を算出する.
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=120mm]{figures/angle.eps}
+	\caption{角度$\theta_i$}
+	\label{fig:angle}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=120mm]{figures/aim_SIGO.eps}
+	\caption{.........}
+	\label{fig:aim_SIGO}
+\end{figure}
+
+
+
+
+\subsection{優先度スケジューリングアリゴリズム}
+\label{SIGO_priority}
+SIGOでは, タイマーベースの優先度スケジューリングアルゴリズムを使用する. このアルゴリズムでは, 最も優先度が高いノードが最初にパケットをブロードキャストする. 他の中継候補ノードは, 自身より優先度の高いノードからのパケットを受信すると, 待機中のパケットを破棄する. タイマーが期限切れになり, 自身より優先度の高いノードからのパケットを受信していない場合, RCSの選定, RCSに含まれるノードの優先順位をパケットに含みブロードキャストを開始する. SIGOは, 中継候補ノード$i$の優先度を以下の式\ref{pri-intersection}, \ref{pri}で算出する.
+
+\begin{equation}
+	\label{pri-intersection}
+	\frac{D_{sd} - D_{id}}{ETX_{i}^{2}} + IRI_i,  D_{id} < D_{sd}
+\end{equation}
+
+\begin{equation}
+	\label{pri}
+	\frac{D_{sd} - D_{id}}{ETX_{i}^{2}} ,   D_{id} < D_{sd}
+\end{equation}
+
+ここで, $D_{sd}$は送信ノードから宛先ノードまでの距離, $D_{id}$は各中継候補ノード$i$から宛先ノードまでの距離である. $D_{id}$ \verb|<| $D_{sd}$の条件を満たさない場合は, 優先度の計算は行わずにRCSから除外する. 式\ref{pri-intersection}はノード$i$が交差点ノードの場合, 式\ref{pri}はノード$i$が交差点ノード以外の場合に適用される. また, 式\ref{pri-intersection}, \ref{pri}で算出された値が大きいほどノード$i$の優先度が高くなる.
+
+
+
+
+\section{ORS: Opportunistic Recovery Strategy}
+提案したOpportunistic routing(SIGO)は, Local optimum problemに陥ることがある. すなわち, 自分より宛先ノードに近い隣接ノードが存在しない場合である. このLocal optimum problemを解決するために, recovery strategyが必要である. 本研究では, 従来の中継ノードを一つ選択するユニキャスト型のrecovery strategyとは異なり, SIGOと同様にRCSに向けてパケットをブロードキャストするopportunistic recovery strategy(ORS)を提案する. ORSでは, SIGOと同様により高い優先度を持つ中継候補ノードからパケットをブロードキャストする. 自身より優先度の高い中継候補ノードからのパケットを受信した場合, 自身の待機中パケットを破棄する. 提案するORSでは, 中継候補ノードの優先度を決定するメトリックとしてリンク品質とJBRで提案された最小角度法を用いる. 最初にLocal optimum problemに陥ったノードをLSN, LSNにパケットを送信したノード(LSNの1ホップ前のノード)をPLSNと名付ける. LSNは従来のrecovery strategyと同様に, 自身の位置情報をパケットに含めてパケットをブロードキャストする. LSNより宛先に近いノードがパケットを受信した場合, 通常の中継戦略(SIGO)を開始する. また, ORSでは最小角度法を用いるため, recovery strategyが完了するまで, LSNとPLSNの位置情報が常にパケットに含まれる.
+ORSのフローチャートを図\ref{fig:ORS}に示す.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=170mm]{figures/ORS.eps}
+	\caption{SIGOとORSのフローチャート}
+	\label{fig:ORS}
+\end{figure}
+
+\subsection{パケットフォーマット}
+ORSのデータパケットのフォーマットを図\ref{fig:ORS_packet}に示す.
+
+\begin{itemize}
+	\item $SourceId$: ソースノードのID.
+	\item $DstId$: 宛先ノードのID.
+	\item $Dst_x Pos$: 宛先ノードの$x$座標.
+	\item $Dst_y Pos$: 宛先ノードの$y$座標.
+	\item $ID_i$: 中継候補ノードの優先度$i$. $i$ = 1, 2, 3, ...(数字が低いほど優先順位が高い) 
+	\item $Send_x Pos$: 送信ノードの$x$座標.
+	\item $Send_y Pos$: 送信ノードの$y$座標.
+	\item $LSN_x Pos$: LSNの$x$座標.
+	\item $LSN_y Pos$: LSNの$y$座標.
+	\item $PLSN_x Pos$: PLSNの$x$座標.
+	\item $PLSN_y Pos$: PLSNの$y$座標.
+	\item $Data$: ペイロード部.
+\end{itemize}
+
+ここで, $ID_i$, $Send_x Pos$, $Send_y Pos$以外の情報はrecovery strategy中には変更されない. 各recovery strategyにおける送信ノードは中継候補ノードの優先度情報$ID_i$と自身の位置情報$Send_x$, $Send_y$を更新しブロードキャストする.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=70mm]{figures/ORS_packet.eps}
+	\caption{ORSパケットフォーマット}
+	\label{fig:ORS_packet}
+\end{figure}
+
+
+\subsection{RCSに含まれるノードの条件}
+ORSでは, 条件\ref{potential_nodes}を満たす隣接ノードの中からRCSを選定する. 条件\ref{potential_nodes}を満たさない隣接ノードはRCSの対象外となり後述する優先度の計算も行わない.
+
+\begin{equation}
+	\label{potential_nodes}
+	\left( nldis_i > cldis \right)   AND   \left( nldis_i > mndis_i \right) 
+\end{equation}
+
+$cldis$は送信ノードと送信ノードの1ホップ前のノード(送信ノードにパケットを送信したノード)との距離, $nldis$は送信ノードの1ホップ前のノードと検討中のノード(RCSに含まれる条件を満たすノード)の距離, $mndis$は送信ノードと検討中のノードの距離である(図\ref{fig:Condition_RCS}). 
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=150mm]{figures/Condition_RCS.eps}
+	\caption{RCSに含まれるノードの条件}
+	\label{fig:Condition_RCS}
+\end{figure}
+
+
+\subsection{最小角度法}
+ORSでは, 中継候補ノードの優先度を決定するメトリックの1つとして最小角度法を用いる. ORSにおける各送信ノード(LSNも含む)は, 条件\ref{potential_nodes}を満たす各隣接ノード$i$の$sdangle$と$snagle_i$を算出する(図\ref{minangle}).
+$sdangle$はLSNと宛先ノードを結ぶ直線とLSNとPLSNを結ぶ直線のなす角度である. $snangle_i$はLSNとRCSの条件を満たす中継候補ノード$i$を結ぶ直線とLSNとPLSNを結ぶ直線のなす角度である. 
+次に算出した$snangle$と$sdangle$を用いて, 式\ref{minangle}で中継候補ノード$i$の$minangle_i$を算出する.
+
+\begin{equation}
+	\label{minangle}
+	minangle_i = \mid sdangle - snangle_i \mid
+\end{equation}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=130mm]{figures/minangle.eps}
+	\caption{最小角度法}
+	\label{fig:minangle}
+\end{figure}
+
+
+\subsection{優先度スケジューリングアリゴリズム}
+\label{ORS_priority}
+
+ORSでは, SIGOと同様にタイマーベースの優先度スケジューリングアルゴリズムを使用する. ORSにおいて, 各送信ノードは中継候補ノード$i$の優先度を式\ref{sameORS}, \ref{diffORS}で算出する. 
+
+\begin{equation}
+	\label{sameORS}
+	\frac{360 - minangle_i}{ETX_{i}^{2}} + mndis
+\end{equation}
+
+\begin{equation}
+	\label{diffORS}
+	\frac{360 - minangle_i}{ETX_{i}^{2}} 
+\end{equation}
+
+ここで, 式\ref{sameORS}は, 送信ノードと中継候補ノード$i$が同一道路セグメントに存在する場合, または中継候補ノード$i$が交差点ノードの場合に適応される. それ以外の場合は, 式\ref{diffORS}が適応される.
+また, 式\ref{sameORS}, \ref{diffORS}で算出された値が大きいほどノード$i$の優先度が高くなる.
+
+
+\section{Geocast routingへの拡張}
+本研究では, \ref{SIGO}節のSIGOをGeocastに拡張した転送手法(GSIGO)を提案し, SIGOがGeocast routingにおいても有効であることを示す. GSIGOでは, 主に2種類転送方法に分類できる(図\ref{fig:Geocast}). 1つ目は, Geocast regionの中心座標(SIGOにおける宛先ノードの位置情報)を目指したSIGOと同様の転送手法. 2つ目は, Geocast region内に存在するノード全体にパケットを拡散するためのフラッディングである. 
+GSIGOでは, ソースノードはGeocast regionに関する情報とRCSとして選択したノードの優先度情報をパケットに含みブロードキャストを行う.
+パケットを受信した各ノードは, geocast regionに存在するか否かで動作が異なる.
+
+\par
+\vspace{5mm}
+\noindent
+\textbf{Geocast regionに存在しない場合}
+\vspace{5mm}
+
+各受信ノードは, パケットに自身のIDが含まれている場合, SIGOの優先度スケジューリングアルゴリズムに従う. それ以外はパケットを破棄する. また, フラッディングによるパケットを受信した場合, 受信したパケットを送信したノードがGeocast regionに存在する場合のみ, フラッディングを行う. それ以外の場合は, パケットを破棄する.
+
+\par
+\vspace{5mm}
+\noindent
+\textbf{Geocast regionに存在する場合}
+\vspace{5mm}
+
+各受信ノードはパケットを受信した場合, フラッディングを行う. 
+
+\par
+また, Geocast regionに存在するか否かに関係なく, 過去に一度受信したことがあるパケットを受信した場合は, パケットを破棄する.
+GSIGOのフローチャートを図\ref{fig:Geocast_flowchart}に示す.
+
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=130mm]{figures/Geocast.eps}
+	\caption{GSIGOの概要}
+	\label{fig:Geocast}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=150mm]{figures/Geocast_flowchart.eps}
+	\caption{GSIGOフローチャート}
+	\label{fig:Geocast_flowchart}
+\end{figure}
+
+
+\chapter{性能評価}
+\section{概要}
+本シミュレーションでは, 提案した3つのプロトコル(SIGO, ORS, GSIGO)を\ref{LSGO_evaluation}節と同様のシミュレーション設定とシミュレーションシナリオで評価した. また, 各プロトコル共にRCS数の最大値は5に設定した. したがって各送信ノードは, 隣接ノードの優先順位を計算し, 優先度が高い順に5つのノードをRCSに選定する. また, シャドウイングの強度による通信性能の影響を調査するため, 式\ref{shadowing}のシャドウイングパラメータ$\alpha$を変化させて評価を行った. 以下のシミュレーション結果を表すグラフにおいて, プロトコル名($\alpha$)と表記したものは, そのプロトコルがシャドウイングパラメータ$\alpha$の時の取得結果を表す. 
+例えば, SIGO(10)の場合, シミュレーションパラメータが10の時のSIGOの結果を表す.
+
+\section{Opportunistic routingの評価}
+\label{SIGO_evaluation}
+本節では, SIGOの有効性を評価するため, PDR, エンドツーエンド遅延, オーバーヘッドの3つの評価項目を用いてLSGOと比較した.
+各評価項目の算出方法は\ref{evaluation_item}節と同様である.
+
+\par
+\vspace{5mm}
+\noindent
+\textbf{パケット到達率(PDR)}
+\vspace{5mm}
+
+図\ref{fig:SIGO_PDR}は, ノード数とシャドウイングパラメータを変化させたときのSIGOとLSGOのPDRを示している.
+図に示す通り, PDRの評価では以下のような結果が得られた.
+(1) シャドウイングパラメータが増加するほど, SIGOとLSGOの差が大きくなり, 通信性能の向上を果たしている.
+(2) ノード数が増加するほど, SIGOとLSGOの差が大きくなり, 通信性能の向上を果たしている.
+(1)の結果はシャドウイングパラメータが増加するほど, LSGOは 図\ref{fig:LSGO-problem}(a)のようにLocal optimum problemに陥る可能性が高まるのに対して, SIGOでは交差点ノードを優先することで図\ref{fig:LSGO-problem}(b)のように, この問題をを回避していることが原因だと推測される (Opportunistic routingの評価ではrecovery stratyは未実装であるため, Local optimum problemに陥るとパケットをドロップする).
+また, (2)の結果はノード数が増加するほど, 送信ノードの隣接ノードに交差点ノードが存在する確率が増加するためだと推測できる.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=110mm]{figures/SIGO_PDR.eps}
+	\caption{Packet delivery ratio vs. number of nodes and shadowing intensity}
+	\label{fig:SIGO_PDR}
+\end{figure}
+
+図\ref{fig:SIGO_delay}は, ノード数とシャドウイングパラメータを変化させたときのSIGOとLSGOのエンドツーエンド遅延を示している.
+図が示す通り, SIGOとLSGOともにノード数が増加するほど, エンドツーエンド遅延が増加している. これは, ノード数が増加するほど送信ノードの隣接ノード数が多くなり, より距離が遠いソースノードと宛先ノードのペアでパケットの到達に成功しているため, 結果としてよりソースノードと宛先ノードの距離が遠いほどホップ数が増加するため, 遅延が増加したと推測される.
+また, 本シミュレーション設定とシミュレーションシナリオおいて, 提案プロトコルのエンドツーエンド遅延に対する影響は非常に小さいものであった. これは以下の3つの理由が推測される. (1) 本シミュレーションのシナリオは格子状であるため, パケットをのどの道路で中継しても, ソースノードと宛先ノード間の距離が変わらない. (2) 本シミュレーションでは, Local optimum problemに対処するrecovery strategyを実装していない. (3) 本シミュレーションでは, 再送制御は使用しなかった. 
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=110mm]{figures/SIGO_delay.eps}
+	\caption{End-to-end delays vs. number of nodes and shadowing intensity}
+	\label{fig:SIGO_delay}
+\end{figure}
+
+図\ref{fig:SIGO_overhead}は, ノード数とシャドウイングパラメータを変化させたときのSIGOとLSGOのオーバーヘッドを示している.
+図に示す通り, 以下の3つの結果が得られた.
+(1) ノード数が増加するほど, LSGOとSIGO共にオーバーヘッドが減少する.
+(2) シャドウイングパラメータが増加するほど, LSGOに比べてSIGOのオーバーヘッドが向上する.
+(3) ノード数が増加するほど, SIGOとLSGOのオーバーヘッドの差が小さくなる.
+(1)の結果は, LSGOとSIGO共にノード数が増加すると, 各送信ノードに隣接するノード数が増加し, 宛先ノードが正常にパケットを受信した総数が増加するからだと推測される.
+(2)の結果は, シャドウイングパラメータが増加するほど, LSGOと比較してSIGOは宛先ノードが正常にパケットを受信した総数が増加したからだと推測される. 
+(3)の結果は, 交差点ノードによる中継がパケット数を増加させる可能性があるからだと推測される.
+例えば, 宛先ノード方向に建物が存在し, SIGOのアルゴリズムで交差点ノードが中継候補ノードの中で最も優先度が高いノードして選択されたとする. この場合交差点ノードは, RCSを異なるroad segmentに存在するノードから選定する確率が高まる. このとき, 優先度の低い中継候補ノードが建物による電波の遮断により, 優先度の高い中継候補ノードからのパケットを受信できない可能性が高くなる. 結果として, 優先度の低い中継候補ノードのブロードキャストキャンセルがされないため, 冗長なパケットが増加する.
+図\ref{fig:Intersection_route}にこの状況の一例を示す.
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=110mm]{figures/SIGO_overhead.eps}
+	\caption{Routing protocol overhead vs. number of nodes and shadowing intensity}
+	\label{fig:SIGO_overhead}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=130mm]{figures/intersection_routing.eps}
+	\caption{交差点ノードによる中継がオーバーヘッドを増加させる原因}
+	\label{fig:Intersection_route}
+\end{figure}
+
+
+\section{Recovery strategyの評価}
+\label{Recovery_evaluation}
+\section{Geocast routingの評価}
+\label{Geocast_evaluation}
+
+
+\chapter{結論}
 
 
 
