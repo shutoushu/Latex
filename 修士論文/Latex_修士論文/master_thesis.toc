@@ -39,8 +39,8 @@
 \contentsline {chapter}{第5章 性能評価}{39}{}%
 \contentsline {section}{\numberline {5.1}概要}{39}{}%
 \contentsline {section}{\numberline {5.2}Opportunistic routingの評価}{39}{}%
-\contentsline {section}{\numberline {5.3}Recovery strategyの評価}{41}{}%
-\contentsline {section}{\numberline {5.4}Geocast routingの評価}{41}{}%
+\contentsline {section}{\numberline {5.3}Recovery strategyの評価}{42}{}%
+\contentsline {section}{\numberline {5.4}Geocast routingの評価}{42}{}%
 \contentsline {chapter}{第6章 結論}{43}{}%
 \contentsline {chapter}{謝辞}{43}{}%
 \contentsline {chapter}{参考文献}{44}{}%
