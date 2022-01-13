@@ -28,19 +28,26 @@
 \contentsline {section}{\numberline {4.2}前提条件}{26}{}%
 \contentsline {section}{\numberline {4.3}SIGO: Shadowing-based Intersection Geographic Opportunistic Routing}{27}{}%
 \contentsline {subsection}{\numberline {4.3.1}パケットフォーマット}{27}{}%
-\contentsline {subsection}{\numberline {4.3.2}Intersection Relay Index (IRI)}{29}{}%
+\contentsline {subsection}{\numberline {4.3.2}Intersection Relay Index (IRI)}{28}{}%
 \contentsline {subsection}{\numberline {4.3.3}優先度スケジューリングアリゴリズム}{30}{}%
-\contentsline {section}{\numberline {4.4}ORS: Opportunistic Recovery Strategy}{31}{}%
-\contentsline {subsection}{\numberline {4.4.1}パケットフォーマット}{32}{}%
+\contentsline {section}{\numberline {4.4}ORS: Opportunistic Recovery Strategy}{32}{}%
+\contentsline {subsection}{\numberline {4.4.1}パケットフォーマット}{33}{}%
 \contentsline {subsection}{\numberline {4.4.2}RCSに含まれるノードの条件}{34}{}%
-\contentsline {subsection}{\numberline {4.4.3}最小角度法}{35}{}%
-\contentsline {subsection}{\numberline {4.4.4}優先度スケジューリングアリゴリズム}{36}{}%
-\contentsline {section}{\numberline {4.5}Geocast routingへの拡張}{37}{}%
+\contentsline {subsection}{\numberline {4.4.3}最小角度法}{34}{}%
+\contentsline {subsection}{\numberline {4.4.4}優先度スケジューリングアリゴリズム}{35}{}%
+\contentsline {section}{\numberline {4.5}Geocast routingへの拡張}{36}{}%
 \contentsline {chapter}{第5章 性能評価}{39}{}%
 \contentsline {section}{\numberline {5.1}概要}{39}{}%
 \contentsline {section}{\numberline {5.2}Opportunistic routingの評価}{39}{}%
-\contentsline {section}{\numberline {5.3}Recovery strategyの評価}{42}{}%
-\contentsline {section}{\numberline {5.4}Geocast routingの評価}{42}{}%
-\contentsline {chapter}{第6章 結論}{43}{}%
-\contentsline {chapter}{謝辞}{43}{}%
-\contentsline {chapter}{参考文献}{44}{}%
+\contentsline {subsection}{\numberline {5.2.1}パケット到達率 (PDR) : ノード数変化}{39}{}%
+\contentsline {subsection}{\numberline {5.2.2}エンドツーエンド遅延 : ノード数変化}{40}{}%
+\contentsline {subsection}{\numberline {5.2.3}オーバーヘッド : ノード数変化}{41}{}%
+\contentsline {subsection}{\numberline {5.2.4}パケット到達率 (PDR) : シャドウイング強度変化}{42}{}%
+\contentsline {subsection}{\numberline {5.2.5}エンドツーエンド遅延 : シャドウイング強度変化}{43}{}%
+\contentsline {subsection}{\numberline {5.2.6}オーバーヘッド : シャドウイング強度変化}{44}{}%
+\contentsline {section}{\numberline {5.3}Geocast routingの評価}{45}{}%
+\contentsline {subsection}{\numberline {5.3.1}評価項目}{45}{}%
+\contentsline {subsection}{\numberline {5.3.2}パケット到達率 : ノード数}{47}{}%
+\contentsline {chapter}{第6章 結論}{50}{}%
+\contentsline {chapter}{謝辞}{50}{}%
+\contentsline {chapter}{参考文献}{51}{}%

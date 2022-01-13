@@ -21,16 +21,6 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{1}
-L.~Figueiredo, I.~Jesus, J.~Machado, J.~Ferreira, and J.~Martins~de Carvalho,
-  ``Towards the development of intelligent transportation systems,'' \emph{ITSC
-  2001. 2001 IEEE Intelligent Transportation Systems. Proceedings (Cat.
-  No.01TH8585)}, pp. 1206--1211, 2001.
-
-\bibitem{2}
-A.~D. Devangavi and R.~Gupta, ``Routing protocols in vanet — a survey,'' pp.
-  163--167, 2017.
-
 \bibitem{3}
 C.~Perkins and E.~Royer, ``Ad-hoc on-demand distance vector routing,''
   \emph{Proceedings WMCSA'99. Second IEEE Workshop on Mobile Computing Systems
@@ -45,6 +35,39 @@ D.~B. Johnson, D.~A. Maltz, J.~Broch \emph{et~al.}, ``Dsr: The dynamic source
 T.~Clausen, P.~Jacquet, C.~Adjih, A.~Laouiti, P.~Minet, P.~Muhlethaler,
   A.~Qayyum, and L.~Viennot, ``Optimized link state routing protocol (olsr),''
   2003.
+
+\bibitem{16}
+S.~Biswas and R.~Morris, ``Exor: Opportunistic multi-hop routing for wireless
+  networks,'' \emph{Proceedings of the 2005 conference on Applications,
+  technologies, architectures, and protocols for computer communications}, pp.
+  133--144, 2005.
+
+\bibitem{17}
+F.~Lv, H.~Zhu, H.~Xue, Y.~Zhu, S.~Chang, M.~Dong, and M.~Li, ``An empirical
+  study on urban ieee 802.11 p vehicle-to-vehicle communication,'' \emph{2016
+  13th Annual IEEE International Conference on Sensing, Communication, and
+  Networking (SECON)}, pp. 1--9, 2016.
+
+\bibitem{1}
+L.~Figueiredo, I.~Jesus, J.~Machado, J.~Ferreira, and J.~Martins~de Carvalho,
+  ``Towards the development of intelligent transportation systems,'' \emph{ITSC
+  2001. 2001 IEEE Intelligent Transportation Systems. Proceedings (Cat.
+  No.01TH8585)}, pp. 1206--1211, 2001.
+
+\bibitem{VICS}
+K.~Tamura and M.~Hirayama, ``Toward realization of vics-vehicle information and
+  communication system,'' \emph{Proceedings of VNIS'93-Vehicle Navigation and
+  Information Systems Conference}, pp. 72--77, 1993.
+
+\bibitem{ETC}
+Z.-h. Xiao, Z.-q. Guan, and Z.-h. Zheng, ``The research and development of the
+  highway's electronic toll collection system,'' \emph{First International
+  Workshop on Knowledge Discovery and Data Mining (WKDD 2008)}, pp. 359--362,
+  2008.
+
+\bibitem{2}
+A.~D. Devangavi and R.~Gupta, ``Routing protocols in vanet — a survey,'' pp.
+  163--167, 2017.
 
 \bibitem{6}
 B.~Karp and H.-T. Kung, ``Gpsr: Greedy perimeter stateless routing for wireless
@@ -94,12 +117,6 @@ T.-Y. Wu, Y.-B. Wang, and W.-T. Lee, ``Mixing greedy and predictive approaches
 Y.~Xu, L.~Wang, and Y.~Yang, ``Dynamic vehicle routing using an improved
   variable neighborhood search algorithm,'' \emph{Journal of Applied
   Mathematics}, vol. 2013, 2013.
-
-\bibitem{16}
-S.~Biswas and R.~Morris, ``Exor: Opportunistic multi-hop routing for wireless
-  networks,'' \emph{Proceedings of the 2005 conference on Applications,
-  technologies, architectures, and protocols for computer communications}, pp.
-  133--144, 2005.
 
 \bibitem{21}
 D.~S. De~Couto, D.~Aguayo, J.~Bicket, and R.~Morris, ``A high-throughput path
