@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2021.6.6)  13 JAN 2022 16:57
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2021.6.6)  15 JAN 2022 12:53
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -333,18 +333,18 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 77.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 85.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 77.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 85.
  [2
 
 ]
 File: figures/VANET.eps Graphic file (type eps)
  <figures/VANET.eps>
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 102.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 110.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 102.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 110.
  [3] [4]
 File: figures/difference_geographic_opportunistic.eps Graphic file (type eps)
 
@@ -354,34 +354,38 @@ File: figures/basic-opportunity1.eps Graphic file (type eps)
 <figures/basic-opportunity1.eps> [5]
 File: figures/basic-opportunity2.eps Graphic file (type eps)
  <figures/basic-opportunity2.eps> [6]
+Overfull \hbox (43.87816pt too wide) in paragraph at lines 175--184
+ [][][][] 
+ []
+
 [7]
 File: figures/Scheme1.eps Graphic file (type eps)
  <figures/Scheme1.eps> [8]
 File: figures/Scheme2.eps Graphic file (type eps)
- <figures/Scheme2.eps>
+ <figures/Scheme2.eps> [9]
 File: figures/Local_optimum_problem.eps Graphic file (type eps)
 
-<figures/Local_optimum_problem.eps> [9]
+<figures/Local_optimum_problem.eps>
 File: figures/basic-recovery.eps Graphic file (type eps)
- <figures/basic-recovery.eps>
+ <figures/basic-recovery.eps> [10]
 File: figures/Perimeter.eps Graphic file (type eps)
 
 <figures/Perimeter.eps>
 File: figures/cross-link.eps Graphic file (type eps)
- <figures/cross-link.eps> [10]
-File: figures/GPCR.eps Graphic file (type eps)
- <figures/GPCR.eps>
-[11]
+ <figures/cross-link.eps> [11]
 
 LaTeX Warning: Text page 12 contains only floats.
 
 [12]
+File: figures/GPCR.eps Graphic file (type eps)
+ <figures/GPCR.eps>
 File: figures/JBR.eps Graphic file (type eps)
  <figures/JBR.eps> [13] [14] [15
 
 ] [16]
 File: figures/Scenario.eps Graphic file (type eps)
- <figures/Scenario.eps> [17]
+
+<figures/Scenario.eps> [17]
 Overfull \vbox (0.84285pt too high) has occurred while \output is active []
 
 
@@ -389,102 +393,107 @@ Overfull \vbox (0.84285pt too high) has occurred while \output is active []
 File: figures/RCS_PDR.eps Graphic file (type eps)
  <figures/RCS_PDR.eps>
 File: figures/RCS_Delay.eps Graphic file (type eps)
- <figures/RCS_Delay.eps> [20]
-File: figures/RCS_Overhead.eps Graphic file (type eps)
-
-<figures/RCS_Overhead.eps>
+ <figures/RCS_Delay.eps>
 File: figures/RCS_Hop.eps Graphic file (type eps)
- <figures/RCS_Hop.eps> [21]
+ <figures/RCS_Hop.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[20]
+File: figures/RCS_Overhead.eps Graphic file (type eps)
+ <figures/RCS_Overhead.eps> [21]
 File: figures/LSGO_PDR.eps Graphic file (type eps)
  <figures/LSGO_PDR.eps>
-[22]
 File: figures/LSGO_delay.eps Graphic file (type eps)
- <figures/LSGO_delay.eps>
+
+<figures/LSGO_delay.eps> [22]
 File: figures/LSGO_overhead.eps Graphic file (type eps)
- <figures/LSGO_overhead.eps>
+ <figures/LSGO_overhead.eps> [23]
 File: figures/LSGO_problem.eps Graphic file (type eps)
 
-<figures/LSGO_problem.eps> [23] [24] [25]
+<figures/LSGO_problem.eps> [24] [25]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 570.
+(Font)              No change on input line 620.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 571.
+(Font)              No change on input line 621.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 572.
+(Font)              No change on input line 622.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 573.
+(Font)              No change on input line 623.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 574.
+(Font)              No change on input line 624.
  [26
 
 ]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 575.
+(Font)              No change on input line 625.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 576.
+(Font)              No change on input line 626.
 File: figures/hello_packet_format.eps Graphic file (type eps)
-
-<figures/hello_packet_format.eps> [27]
+ <figures/hello_packet_format.eps>
+[27]
 File: figures/SIGO_packet_format.eps Graphic file (type eps)
- <figures/SIGO_packet_format.eps>
-[28]
+ <figures/SIGO_packet_format.eps> [28]
 File: figures/closest_road_segment.eps Graphic file (type eps)
- <figures/closest_road_segment.eps> [29]
+ <figures/closest_road_segment.eps>
+[29]
 File: figures/angle.eps Graphic file (type eps)
  <figures/angle.eps>
 File: figures/aim_SIGO.eps Graphic file (type eps)
-
-<figures/aim_SIGO.eps> [30] [31]
+ <figures/aim_SIGO.eps> [30] [31]
 File: figures/ORS.eps Graphic file (type eps)
- <figures/ORS.eps> [32] [33]
+ <figures/ORS.eps>
+[32] [33]
 File: figures/ORS_packet.eps Graphic file (type eps)
-
-<figures/ORS_packet.eps>
+ <figures/ORS_packet.eps> [34]
 File: figures/Condition_RCS.eps Graphic file (type eps)
- <figures/Condition_RCS.eps>
+ <figures/Condition_RCS.eps> [35]
 File: figures/minangle.eps Graphic file (type eps)
- <figures/minangle.eps>
-[34] [35] [36]
+
+<figures/minangle.eps> [36]
+File: figures/aim_minangle.eps Graphic file (type eps)
+ <figures/aim_minangle.eps> [37]
 File: figures/Geocast.eps Graphic file (type eps)
- <figures/Geocast.eps>
+
+<figures/Geocast.eps>
 File: figures/Geocast_flowchart.eps Graphic file (type eps)
- <figures/Geocast_flowchart.eps> [37]
-[38] [39
+ <figures/Geocast_flowchart.eps> [38] [39] [40
 
 ]
 File: figures/SIGO_PDR_num.eps Graphic file (type eps)
- <figures/SIGO_PDR_num.eps> [40]
+
+<figures/SIGO_PDR_num.eps> [41]
 File: figures/SIGO_delay_num.eps Graphic file (type eps)
- <figures/SIGO_delay_num.eps> [41]
+ <figures/SIGO_delay_num.eps> [42]
 File: figures/SIGO_overhead_num.eps Graphic file (type eps)
 
 <figures/SIGO_overhead_num.eps>
 File: figures/Recovery_overhead_reason.eps Graphic file (type eps)
- <figures/Recovery_overhead_reason.eps> [42]
+ <figures/Recovery_overhead_reason.eps> [43]
 File: figures/SIGO_PDR_shadow.eps Graphic file (type eps)
 
 <figures/SIGO_PDR_shadow.eps>
 File: figures/SIGO_delay_shadow.eps Graphic file (type eps)
- <figures/SIGO_delay_shadow.eps> [43] [44]
+ <figures/SIGO_delay_shadow.eps> [44] [45]
 File: figures/SIGO_overhead_shadow.eps Graphic file (type eps)
 
 <figures/SIGO_overhead_shadow.eps>
 File: figures/dif_roadsegment_overhead_reason.eps Graphic file (type eps)
 
-<figures/dif_roadsegment_overhead_reason.eps> [45] [46]
+<figures/dif_roadsegment_overhead_reason.eps> [46] [47]
 File: figures/GSIGO_PDR_num.eps Graphic file (type eps)
 
-<figures/GSIGO_PDR_num.eps>
+<figures/GSIGO_PDR_num.eps> [48]
 File: figures/GSIGO_overhead_num.eps Graphic file (type eps)
- <figures/GSIGO_overhead_num.eps> [47]
+ <figures/GSIGO_overhead_num.eps>
 File: figures/GSIGO_PDR_shadow.eps Graphic file (type eps)
 
-<figures/GSIGO_PDR_shadow.eps>
+<figures/GSIGO_PDR_shadow.eps> [49]
 File: figures/GSIGO_overhead_shadow.eps Graphic file (type eps)
- <figures/GSIGO_overhead_shadow.eps> [48]
-[49] [50
+ <figures/GSIGO_overhead_shadow.eps>
+[50] [51
 
-] (./master_thesis.bbl [51
+] (./master_thesis.bbl [52
 
 ]
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
@@ -505,7 +514,7 @@ LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 65.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 75.
- [52
+ [53
 
 ]
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
@@ -530,7 +539,7 @@ LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 130.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 135.
- [53]
+ [54]
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 140.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
@@ -555,14 +564,16 @@ LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 175.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 181.
-) [54] (./master_thesis.aux) ) 
+) [55] [56
+
+] (./master_thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4149 strings out of 478987
- 58061 string characters out of 5858877
- 378041 words of memory out of 5000000
- 22200 multiletter control sequences out of 15000+600000
+ 4157 strings out of 478987
+ 58244 string characters out of 5858877
+ 379075 words of memory out of 5000000
+ 22207 multiletter control sequences out of 15000+600000
  417726 words of font info for 83 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 57i,9n,66p,1158b,302s stack positions out of 5000i,500n,10000p,500000b,200000s
+ 57i,10n,66p,1158b,312s stack positions out of 5000i,500n,10000p,500000b,200000s
 
-Output written on master_thesis.dvi (59 pages, 173528 bytes).
+Output written on master_thesis.dvi (61 pages, 183892 bytes).

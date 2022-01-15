@@ -9,8 +9,8 @@
 \contentsline {subsection}{\numberline {2.4.1}Topology-based routing}{3}{}%
 \contentsline {subsection}{\numberline {2.4.2}Geographic routing}{4}{}%
 \contentsline {subsection}{\numberline {2.4.3}Opportunistic routing}{4}{}%
-\contentsline {subsection}{\numberline {2.4.4}Geocast routing}{7}{}%
-\contentsline {section}{\numberline {2.5}Local optimum problem}{9}{}%
+\contentsline {subsection}{\numberline {2.4.4}Geocast routing}{8}{}%
+\contentsline {section}{\numberline {2.5}Local optimum problem}{10}{}%
 \contentsline {section}{\numberline {2.6}Recovery strategy}{10}{}%
 \contentsline {chapter}{第3章 LSGO}{15}{}%
 \contentsline {section}{\numberline {3.1}概要}{15}{}%
@@ -21,7 +21,7 @@
 \contentsline {subsection}{\numberline {3.5.1}シミュレーション設定}{17}{}%
 \contentsline {subsection}{\numberline {3.5.2}評価項目}{18}{}%
 \contentsline {subsection}{\numberline {3.5.3}RCS数の影響}{19}{}%
-\contentsline {subsection}{\numberline {3.5.4}シャドウイングの影響}{21}{}%
+\contentsline {subsection}{\numberline {3.5.4}シャドウイングの影響}{22}{}%
 \contentsline {subsection}{\numberline {3.5.5}LSGOの問題点}{24}{}%
 \contentsline {chapter}{第4章 車両位置とリンク状態を考慮した地理的opportunistic routing}{26}{}%
 \contentsline {section}{\numberline {4.1}概要}{26}{}%
@@ -32,22 +32,26 @@
 \contentsline {subsection}{\numberline {4.3.3}優先度スケジューリングアリゴリズム}{30}{}%
 \contentsline {section}{\numberline {4.4}ORS: Opportunistic Recovery Strategy}{32}{}%
 \contentsline {subsection}{\numberline {4.4.1}パケットフォーマット}{33}{}%
-\contentsline {subsection}{\numberline {4.4.2}RCSに含まれるノードの条件}{34}{}%
-\contentsline {subsection}{\numberline {4.4.3}最小角度法}{34}{}%
-\contentsline {subsection}{\numberline {4.4.4}優先度スケジューリングアリゴリズム}{35}{}%
-\contentsline {section}{\numberline {4.5}Geocast routingへの拡張}{36}{}%
-\contentsline {chapter}{第5章 性能評価}{39}{}%
-\contentsline {section}{\numberline {5.1}概要}{39}{}%
-\contentsline {section}{\numberline {5.2}Opportunistic routingの評価}{39}{}%
-\contentsline {subsection}{\numberline {5.2.1}パケット到達率 (PDR) : ノード数変化}{39}{}%
-\contentsline {subsection}{\numberline {5.2.2}エンドツーエンド遅延 : ノード数変化}{40}{}%
-\contentsline {subsection}{\numberline {5.2.3}オーバーヘッド : ノード数変化}{41}{}%
-\contentsline {subsection}{\numberline {5.2.4}パケット到達率 (PDR) : シャドウイング強度変化}{42}{}%
-\contentsline {subsection}{\numberline {5.2.5}エンドツーエンド遅延 : シャドウイング強度変化}{43}{}%
-\contentsline {subsection}{\numberline {5.2.6}オーバーヘッド : シャドウイング強度変化}{44}{}%
-\contentsline {section}{\numberline {5.3}Geocast routingの評価}{45}{}%
-\contentsline {subsection}{\numberline {5.3.1}評価項目}{45}{}%
-\contentsline {subsection}{\numberline {5.3.2}パケット到達率 : ノード数}{47}{}%
-\contentsline {chapter}{第6章 結論}{50}{}%
-\contentsline {chapter}{謝辞}{50}{}%
-\contentsline {chapter}{参考文献}{51}{}%
+\contentsline {subsection}{\numberline {4.4.2}RCSに含まれるノードの条件}{35}{}%
+\contentsline {subsection}{\numberline {4.4.3}最小角度法}{35}{}%
+\contentsline {subsection}{\numberline {4.4.4}優先度スケジューリングアリゴリズム}{36}{}%
+\contentsline {section}{\numberline {4.5}Geocast routingへの拡張}{37}{}%
+\contentsline {chapter}{第5章 性能評価}{40}{}%
+\contentsline {section}{\numberline {5.1}概要}{40}{}%
+\contentsline {section}{\numberline {5.2}Opportunistic routingの評価}{40}{}%
+\contentsline {subsection}{\numberline {5.2.1}パケット到達率 (PDR) : ノード数変化}{40}{}%
+\contentsline {subsection}{\numberline {5.2.2}エンドツーエンド遅延 : ノード数変化}{41}{}%
+\contentsline {subsection}{\numberline {5.2.3}オーバーヘッド : ノード数変化}{42}{}%
+\contentsline {subsection}{\numberline {5.2.4}パケット到達率 (PDR) : シャドウイング強度変化}{43}{}%
+\contentsline {subsection}{\numberline {5.2.5}エンドツーエンド遅延 : シャドウイング強度変化}{44}{}%
+\contentsline {subsection}{\numberline {5.2.6}オーバーヘッド : シャドウイング強度変化}{45}{}%
+\contentsline {section}{\numberline {5.3}Geocast routingの評価}{46}{}%
+\contentsline {subsection}{\numberline {5.3.1}評価項目}{46}{}%
+\contentsline {subsection}{\numberline {5.3.2}パケット到達率 : ノード数}{48}{}%
+\contentsline {subsection}{\numberline {5.3.3}オーバーヘッド : ノード数}{48}{}%
+\contentsline {subsection}{\numberline {5.3.4}パケット到達率 : シャドウイング強度}{49}{}%
+\contentsline {subsection}{\numberline {5.3.5}オーバーヘッド : シャドウイング強度}{50}{}%
+\contentsline {chapter}{第6章 結論}{51}{}%
+\contentsline {chapter}{謝辞}{51}{}%
+\contentsline {chapter}{参考文献}{52}{}%
+\contentsline {chapter}{発表論文}{55}{}%
