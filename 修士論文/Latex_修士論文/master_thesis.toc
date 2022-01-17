@@ -9,8 +9,8 @@
 \contentsline {subsection}{\numberline {2.4.1}Topology-based routing}{3}{}%
 \contentsline {subsection}{\numberline {2.4.2}Geographic routing}{4}{}%
 \contentsline {subsection}{\numberline {2.4.3}Opportunistic routing}{4}{}%
-\contentsline {subsection}{\numberline {2.4.4}Geocast routing}{8}{}%
-\contentsline {section}{\numberline {2.5}Local optimum problem}{10}{}%
+\contentsline {subsection}{\numberline {2.4.4}Geocast routing}{7}{}%
+\contentsline {section}{\numberline {2.5}Local optimum problem}{9}{}%
 \contentsline {section}{\numberline {2.6}Recovery strategy}{10}{}%
 \contentsline {chapter}{第3章 LSGO}{15}{}%
 \contentsline {section}{\numberline {3.1}概要}{15}{}%

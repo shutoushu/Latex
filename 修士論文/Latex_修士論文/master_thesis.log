@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2021.6.6)  17 JAN 2022 19:33
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2021.6.6)  17 JAN 2022 20:55
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -244,7 +244,11 @@ File: l3backend-dvips.def 2021-05-07 L3 backend support: dvips
 \g__pdf_backend_link_int=\count280
 \g__pdf_backend_link_sf_int=\count281
 )
-(./master_thesis.aux)
+(./master_thesis.aux
+
+LaTeX Warning: Label `tab:Recovery' multiply defined.
+
+)
 \openout1 = `master_thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
@@ -354,8 +358,8 @@ File: figures/basic-opportunity1.eps Graphic file (type eps)
 <figures/basic-opportunity1.eps> [5]
 File: figures/basic-opportunity2.eps Graphic file (type eps)
  <figures/basic-opportunity2.eps> [6]
-Overfull \hbox (43.87816pt too wide) in paragraph at lines 175--184
- [][][][] 
+Overfull \hbox (4.01132pt too wide) in paragraph at lines 181--181
+[][]\OT1/cmr/m/n/10 Opportunistic| 
  []
 
 [7]
@@ -380,12 +384,15 @@ LaTeX Warning: Text page 12 contains only floats.
 File: figures/GPCR.eps Graphic file (type eps)
  <figures/GPCR.eps>
 File: figures/JBR.eps Graphic file (type eps)
- <figures/JBR.eps> [13] [14] [15
+ <figures/JBR.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13] [14] [15
 
 ] [16]
 File: figures/Scenario.eps Graphic file (type eps)
-
-<figures/Scenario.eps> [17]
+ <figures/Scenario.eps> [17]
 Overfull \vbox (0.84285pt too high) has occurred while \output is active []
 
 
@@ -413,8 +420,6 @@ File: figures/LSGO_problem.eps Graphic file (type eps)
 
 <figures/LSGO_problem.eps> [24] [25]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 620.
-LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 621.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 622.
@@ -422,13 +427,15 @@ LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 623.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 624.
+LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
+(Font)              No change on input line 625.
  [26
 
 ]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 625.
-LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 626.
+LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
+(Font)              No change on input line 627.
 File: figures/hello_packet_format.eps Graphic file (type eps)
  <figures/hello_packet_format.eps>
 [27]
@@ -566,14 +573,18 @@ LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 181.
 ) [55] [56
 
-] (./master_thesis.aux) ) 
+] (./master_thesis.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
  4157 strings out of 478987
  58244 string characters out of 5858877
- 379075 words of memory out of 5000000
+ 379115 words of memory out of 5000000
  22207 multiletter control sequences out of 15000+600000
  417726 words of font info for 83 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  57i,10n,66p,1158b,312s stack positions out of 5000i,500n,10000p,500000b,200000s
 
-Output written on master_thesis.dvi (61 pages, 184228 bytes).
+Output written on master_thesis.dvi (61 pages, 184440 bytes).
