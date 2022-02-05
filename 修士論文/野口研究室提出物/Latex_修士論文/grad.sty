@@ -1,0 +1,92 @@
+% \setlength{\voffset}{0pt}
+% \setlength{\hoffset}{-0.3in}
+% \setlength{\oddsidemargin}{0pt}
+% \setlength{\footskip}{20pt}
+% \setlength{\marginparsep}{0pt}
+% \setlength{\marginparwidth}{0pt}
+% \setlength{\textwidth}{178mm}
+
+\usepackage{pifont}
+
+\setlength{\topmargin}{-1in}
+\addtolength{\topmargin}{3cm}
+\setlength{\headheight}{0.7cm}
+\setlength{\headsep}{0.7cm}
+\setlength{\topskip}{0.4cm}
+\setlength{\baselineskip}{0.8cm}
+\setlength{\textheight}{29\baselineskip}
+\setlength{\textwidth}{16.5cm}
+
+\renewcommand{\baselinestretch}{1.35}
+%\renewcommand{\baselinestretch}{1.00}
+
+\setlength{\oddsidemargin}{-1in}
+\addtolength{\oddsidemargin}{2.5cm}
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textwidth}{16.5cm}
+
+
+\setlength{\listparindent}{1zw}
+\setlength{\parindent}{1zw}
+
+%\setlength{\footheight}{0cm}
+\pagestyle{myheadings}
+\renewcommand{\thepage}{\arabic{page}}
+
+\renewcommand{\topfraction}{1.0}
+\renewcommand{\textfraction}{0.0}
+\renewcommand{\floatpagefraction}{1.0}
+
+%文献
+\renewcommand{\thebibliography}[1]{\chapter*{参考文献\@mkboth
+ {参 考 文 献}{参 考 文 献}}\list
+ {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+ \advance\leftmargin\labelsep
+ \usecounter{enumi}}
+ \def\newblock{\hskip .11em plus .33em minus .07em}
+ \sloppy
+ \sfcode`\.=1000\relax}
+
+
+%chapterの定義
+\def\t@makechapterhead#1{ \vspace*{10pt} { \parindent 0pt \raggedright 
+ \ifnum \c@secnumdepth >\m@ne \Huge\bf 第\thechapter 章\par  
+ \vskip 10pt \fi \Huge \bf #1\par  
+ \nobreak \vskip 40pt } }
+
+\def\t@makeschapterhead#1{ \vspace*{10pt} { \parindent 0pt \raggedright 
+ \Huge \bf #1\par  
+ \nobreak \vskip 40pt } }
+
+%\renewcommand{\chapter}{\clearpage \thispagestyle{empty} \global\@topnum\z@
+%\renewcommand{\chapter}{\clearpage \thispagestyle{myhedings} \global\@topnum\z@
+\renewcommand{\chapter}{\clearpage \global\@topnum\z@
+\@afterindenttrue \secdef\t@chapter\t@schapter} 
+%\def\t@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+% \refstepcounter{chapter} 
+% \typeout{\@chapapp\space\thechapter.}
+% \addcontentsline{toc}{chapter}{\protect
+% \numberline{第 \thechapter 章}#1}\else
+% \addcontentsline{toc}{chapter}{#1}\fi
+\def\t@chapter[#1]#2{
+ \refstepcounter{chapter} 
+ \addcontentsline{toc}{chapter}{第\thechapter 章  #1}
+ \chaptermark{#1}
+ \addtocontents{lof}{\protect\addvspace{10pt}}
+\addtocontents{lot}{\protect\addvspace{10pt}} \if@twocolumn
+\@topnewpage[\t@makechapterhead{#2}] 
+ \else \t@makechapterhead{#2}
+ \@afterheading \fi} 
+\def\t@schapter#1{\if@twocolumn \@topnewpage[\t@makeschapterhead{#1}]
+ \else \t@makeschapterhead{#1}
+ \@afterheading\fi}
+
+\renewcommand{\l@chapter}[2]{\pagebreak[3]
+ \vskip 1.0em plus 1pt \@tempdima 3.5em \begingroup
+ \parindent \z@ \rightskip \@pnumwidth 
+ \parfillskip -\@pnumwidth 
+ \bf \leavevmode #1\hfil \hbox to\@pnumwidth{\hss #2}\par
+ \endgroup}
+
+\def\@cite#1{\(^{\mbox{\scriptsize [#1]}}\)}
+
